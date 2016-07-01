@@ -1,7 +1,9 @@
 Web Piano for submission of IT class
 ------------------------------------
 
-This program is made for a submission of IT class at Keio University.
+This program is made for a submission of IT class at Keio University.  
+Visit [here](https://web.sfc.keio.ac.jp/~t16440ss/) to show this page.  
+
 
 ## Introduction
 This program is Piano player that is made using Web-based technologies.  
