@@ -16,6 +16,15 @@
 }
 
 
+
+@mixin prefix($prop, $arg) {
+  #{$prop}: #{$arg};
+  #{$prop}: -webkit-#{$arg};
+  #{$prop}: -moz-#{$arg};
+  #{$prop}: -ms-#{$arg};
+}
+
+
 // Variables --------------------------------------------
 $black-keybord-width: 45px;
 $white-keybord-width: $black-keybord-width + $black-keybord-width/2 + 7px;
@@ -72,11 +81,7 @@ $key-base-layer: 1;
   top: 0px;
 	background: rgb(255, 255, 25);
 	border-radius: 0 0 12px 12px;
-	background: linear-gradient(rgb(0,0,0),rgb(30,30,30));
-	background: -ms-linear-gradient(rgb(0,0,0),rgb(30,30,30));
-	background: -webkit-linear-gradient(rgb(0,0,0),rgb(30,30,30));
-	background: -moz-linear-gradient(rgb(0,0,0),rgb(30,30,30));
-	background: -o-linear-gradient(rgb(0,0,0),rgb(30,30,30));
+  @include prefix(background, linear-gradient(rgb(0,0,0),rgb(30,30,30)));
 	box-shadow: 0px -1px 2px 0px rgb(50,50,50) inset;
 	width: 32px;
 	height: 108px;

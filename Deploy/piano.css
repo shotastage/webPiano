@@ -441,10 +441,9 @@ li,
   background: #ffff19;
   border-radius: 0 0 12px 12px;
   background: linear-gradient(black, #1e1e1e);
-  background: -ms-linear-gradient(black, #1e1e1e);
   background: -webkit-linear-gradient(black, #1e1e1e);
   background: -moz-linear-gradient(black, #1e1e1e);
-  background: -o-linear-gradient(black, #1e1e1e);
+  background: -ms-linear-gradient(black, #1e1e1e);
   box-shadow: 0px -1px 2px 0px #323232 inset;
   width: 32px;
   height: 108px; }
