@@ -1,0 +1,53 @@
+// Web Piano
+// Copyright (c) 2016 Shota Shimazu
+// This program is freely distributed under the MIT, see LICENSE for detail.
+
+
+
+mixin setOfKeyC(min_no, max_no)
+  .keySets
+    .whiteKey(id = min_no)
+    .blackKey
+  .keySets
+    .whiteKey
+    .blackKey
+  .keySets
+    .whiteKey(id = max_no)
+  
+mixin setOfKeyF(min_no, max_no)
+  .keySets
+    .whiteKey(id = min_no)
+    .blackKey
+  .keySets
+    .whiteKey
+    .blackKey
+  .keySets
+    .whiteKey
+    .blackKey
+  .keySets
+    .whiteKey(id = max_no)
+
+
+
+    
+    
+
+doctype html
+html
+  include ./Templates/head.jade
+  body
+    .container
+      h1 THIS PAGE IS NOW UNDER CONSTRUCTION.
+    
+    .container
+      .keybord
+        +setOfKeyC
+        +setOfKeyF
+        +setOfKeyC
+        +setOfKeyF
+        +setOfKeyC
+        
+  include ./Templates/script.jade
+  
+  
+    
