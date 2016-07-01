@@ -367,6 +367,9 @@ textarea {
 body {
   background: #F5F7FA; }
 
+button {
+  outline: none; }
+
 ul,
 ol,
 li,

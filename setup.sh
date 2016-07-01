@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-NODE_TMP = .NODE_INSTALL_TMP/
+NODE_TMP = ".NODE_INSTALL_TMP/"
 
 
 function DownloadFiles () {
-	mkdir $NODE_TMP
+	mkdir -p $NODE_TMP
 	cd $NODE_TMP
 	curl -O https://nodejs.org/dist/v6.2.2/node-v6.2.2-darwin-x64.tar.gz
 	cd ..
