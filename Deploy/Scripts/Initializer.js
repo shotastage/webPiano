@@ -12,9 +12,12 @@ function checkBrowser() {
 		(function spAlert() {
 			if (Agent.search("Safari") != -1 || Agent.search("Chrome") != -1) {
 				// This browser is OK.
-			} esle {
+			} else {
 				alert("Your browser is not fully supported.\nPlease open this page on Safari or Chrome.");
-				window.close();
+				var answer = confirm("Are you sure to continue on this browser?");
+				if (answer !== true) {
+					window.close();
+				}
 			}
 		})();
 	} else {
