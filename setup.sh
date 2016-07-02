@@ -65,15 +65,13 @@ function InstallRequirements () {
 }
 
 function main () {
-	cat << WELLCOME_MESSAGE
-	Requirements Installer  v0.0.1
-	Copyright (c) 2016 Shota Shimazu
-	This program is freely distributed under the MIT, see LICENSE for detail.
-
-	Press [return] key to continue.
-	WELLCOME_MESSAGE
+	echo "Requirements Installer  v0.0.1"
+	echo "Copyright (c) 2016 Shota Shimazu"
+	echo "This program is freely distributed under the MIT, see LICENSE for detail."
+	echo
+	echo "Press [return] key to continue."
 	read
-	
+
 	if ! command_exists node; then
 		DownloadFiles
 		InstallNode
