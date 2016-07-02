@@ -81,6 +81,11 @@ function main () {
 	fi
 	source $HOME/.bash_profile
 	InstallRequirements
+
+	echo "Completed."
+	echo "Press [return] key to exit."
+	read
+	exit 0
 }
 
 
