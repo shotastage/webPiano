@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-NODE_TMP = ".NODE_INSTALL_TMP/"
+NODE_TMP=".NODE_INSTALL_TMP/"
 
 
 function DownloadFiles () {
