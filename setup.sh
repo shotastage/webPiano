@@ -1,10 +1,27 @@
 #!/usr/bin/env bash
+# Copyright (c) 2016 Shota Shimazu
+# This program is freely distributed under the MIT, see LICENSE for detail.
+
+# <!> WARNING <!>
+# THIS SCRIPT WILL CHANGE YOUR SYSTEM. DO NOT RUN THIS IF YOUR ARE NOT GOOD AT COMPUTER. 
+# AND EVEN IF YOU KNOW ABOUT THIS SCRIPT, PLEASE RUN CAREFULLY.
+#
+# This script will sets up build environment for compiling sources of this program.
 
 NODE_TMP=".NODE_INSTALL_TMP/"
 
 
+function command_exists {
+  command -v "$1" > /dev/null;
+}
+
+
 function DownloadFiles () {
-	mkdir -p $NODE_TMP
+	if [ -e $NODE_TMP ]; then
+		rm -rf $NODE_TMP
+	else
+		mkdir -p $NODE_TMP
+	fi
 	cd $NODE_TMP
 	echo "Downloading latest Node.js ..."
 	curl -O https://nodejs.org/dist/v6.2.2/node-v6.2.2-darwin-x64.tar.gz
@@ -48,9 +65,22 @@ function InstallRequirements () {
 }
 
 function main () {
-	DownloadFiles
-	InstallNode
-	GenRC
+	cat << WELLCOME_MESSAGE
+	Requirements Installer  v0.0.1
+	Copyright (c) 2016 Shota Shimazu
+	This program is freely distributed under the MIT, see LICENSE for detail.
+
+	Press [return] key to continue.
+	WELLCOME_MESSAGE
+	read
+	
+	if ! command_exists node; then
+		DownloadFiles
+		InstallNode
+		GenRC
+	else 
+		echo "Node.js is already installed."
+	fi
 	source $HOME/.bash_profile
 	InstallRequirements
 }
