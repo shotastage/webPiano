@@ -24,7 +24,7 @@ function DownloadFiles () {
 	fi
 	cd $NODE_TMP
 	echo "Downloading latest Node.js ..."
-	curl -O https://nodejs.org/dist/v6.2.2/node-v6.2.2-darwin-x64.tar.gz
+	curl -O "https://nodejs.org/dist/v6.2.2/node-v6.2.2-darwin-x64.tar.gz"
 	cd ..
 }
 
@@ -64,6 +64,13 @@ function InstallRequirements () {
 	fi
 }
 
+
+function Clean () {
+	if [ -e $NODE_TMP ]; then
+		rm -rf $NODE_TMP
+	fi
+}
+
 function main () {
 	echo "Requirements Installer  v0.0.1"
 	echo "Copyright (c) 2016 Shota Shimazu"
@@ -77,11 +84,19 @@ function main () {
 		InstallNode
 		GenRC
 	else 
-		echo "Node.js is already installed."
+		NODE_VER=$(node -v)
+		if echo $NODE_VER | grep -q v6.2.2; then
+			DownloadFiles
+			InstallNode
+			GenRC
+		else
+			echo "Latest Node.js is already installed."
+			echo "Skip installing node."
+		fi
 	fi
 	source $HOME/.bash_profile
 	InstallRequirements
-
+	Clean
 	echo "Completed."
 	echo "Press [return] key to exit."
 	read
