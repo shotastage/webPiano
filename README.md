@@ -6,23 +6,24 @@ Visit [here](https://web.sfc.keio.ac.jp/~t16440ss/) to show this page.
 
 
 ## Introduction
-This program is Piano player that is made using Web-based technologies.  
-You can play this like following guidance.
+You can play the piano on your browser that is made using Web-based technologies.  
 
 
 ### Features
 - Play piano on your browser.
 - Lightweight and clear sound.
+- Support smart device.
 
 
-
-### Used libraries
+### Required libraries
 - [Bootstrap](http://getbootstrap.com)
 - [ScrollReveal.js](https://scrollrevealjs.org)
+- [Fontawesome](http://fontawesome.io)
 
 
 
-### Required browser
+### Required browser 
+
 - Chrome 51+ ( OSX, Linux, Windows )
 
 >> You may know this icon. 
