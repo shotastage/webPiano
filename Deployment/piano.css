@@ -450,3 +450,6 @@ li,
 
 .brack_key:hover:after {
   height: 112px; }
+
+.navbar-brand {
+  font-family: 'Lobster', cursive; }

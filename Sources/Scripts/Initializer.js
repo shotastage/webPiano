@@ -22,8 +22,8 @@ function checkBrowser() {
 		})();
 	} else {
 		// Android support
-		
-	} 
+
+	}
 
 
 	// Check your browser.
@@ -42,5 +42,10 @@ function checkBrowser() {
 		}
 	}
 }
-checkBrowser();
 
+if(location.protocol == 'http:') {
+  location.replace(location.href.replace(/http:/, 'https:'));
+} else {
+	console.log("SSL Support: OK");
+}
+checkBrowser();

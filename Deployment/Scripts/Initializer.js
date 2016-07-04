@@ -22,8 +22,8 @@ function checkBrowser() {
 		})();
 	} else {
 		// Android support
-		
-	} 
+
+	}
 
 
 	// Check your browser.
@@ -31,16 +31,21 @@ function checkBrowser() {
 		// Load required libraries
 	} else {
 		if (Agent.search("Safari") != -1) {
-			alert('Your browser "Safari" is not supported.\nPlease open this page on latest Chrome.');
+			console.log('Your browser "Safari" may be not fully supported.\nPlease open this page on latest Chrome.');
 		} else if (Agent.search("Firefox") != -1) {
-			alert('Your browser "Firefox" is not supported.\nPlease open this page on latest Chrome.');
+			console.log('Your browser "Firefox" may be not fully supported.\nPlease open this page on latest Chrome.');
 		} else if (Agent.search("Edge") != -1) {
-			alert('Your browser "Edge" is not supported.\nPlease open this page on latest Chrome.');
+			console.log('Your browser "Edge" may be not fully supported.\nPlease open this page on latest Chrome.');
 		} else {
 			alert("Your browser is not supported.\nPlase open this page on latest Chrome.");
+			window.close();
 		}
-		window.close();
 	}
 }
-checkBrowser();
 
+if(location.protocol == 'http:') {
+  location.replace(location.href.replace(/http:/, 'https:'));
+} else {
+	console.log("SSL Support: OK");
+}
+checkBrowser();
