@@ -6,28 +6,28 @@
 
 mixin setOfKeyC(min_no, max_no)
   .keySets
-    button.whiteKey(id = min_no)
+    button.whiteKey.reveal(id = min_no)
       audio(id="sound-file" preload="auto")
         source(src="http://web.sfc.keio.ac.jp/~t16440ss/SoundFonts/C3.mp3" type="audio/mp3")
-    button.blackKey
+    button.blackKey.reveal
   .keySets
-    button.whiteKey
-    button.blackKey
+    button.whiteKey.reveal
+    button.blackKey.reveal
   .keySets
-    button.whiteKey(id = max_no)
+    button.whiteKey.reveal(id = max_no)
   
 mixin setOfKeyF(min_no, max_no)
   .keySets
-    button.whiteKey(id = min_no)
-    button.blackKey
+    button.whiteKey.reveal(id = min_no)
+    button.blackKey.reveal
   .keySets
-    button.whiteKey
-    button.blackKey
+    button.whiteKey.reveal
+    button.blackKey.reveal
   .keySets
-    button.whiteKey
-    button.blackKey
+    button.whiteKey.reveal
+    button.blackKey.reveal
   .keySets
-    button.whiteKey(id = max_no)
+    button.whiteKey.reveal(id = max_no)
 
 
 
