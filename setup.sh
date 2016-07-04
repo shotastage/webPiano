@@ -85,13 +85,19 @@ function main () {
 		GenRC
 	else 
 		NODE_VER=$(node -v)
-		if echo $NODE_VER | grep -q v6.2.2; then
+		if echo $NODE_VER | grep -q "v6.2.2"; then
 			DownloadFiles
 			InstallNode
 			GenRC
 		else
-			echo "Latest Node.js is already installed."
-			echo "Skip installing node."
+			if which node | grep -q "homebrew"; then
+				DownloadFiles
+				InstallNode
+				GenRC
+			else
+				echo "Latest Node.js is already installed."
+				echo "Skip installing node."
+			fi
 		fi
 	fi
 	source $HOME/.bash_profile
