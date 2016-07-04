@@ -1,10 +1,26 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-rm -rf ../Scripts/
-rm ../index.html
-rm ../piano.css
+BASIC_DIR=$HOME/Desktop/public_html
+
+function Clean () {
+	rm -rf $BASIC_DIR/Scripts/
+	rm $BASIC_DIR/index.html
+	rm $BASIC_DIR/piano.css
+}
 
 
-mv Deploy/index.html ../index.html
-mv Deploy/piano.css ../piano.css
-mv Deploy/Scripts/ ../Scripts/
+function Copy () {
+	cp Deployment/index.html $BASIC_DIR/index.html
+	cp Deployment/piano.css $BASIC_DIR/piano.css
+	cp -r Deployment/Scripts/ $BASIC_DIR/Scripts/
+}
+
+
+function main () {
+	Clean
+	./compile.sh
+	Copy
+}
+
+
+main 
