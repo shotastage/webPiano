@@ -2,7 +2,7 @@ Web Piano for submission of IT class
 ------------------------------------
 
 This program is made for a submission of IT class at Keio University.  
-Visit [here](https://web.sfc.keio.ac.jp/~t16440ss/) to show this page.  
+Visit [here](https://web.sfc.keio.ac.jp/~t16440ss/webPiano/) to show this page.  
 
 
 ## Introduction

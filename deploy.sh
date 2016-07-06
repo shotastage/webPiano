@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASIC_DIR=$HOME/Desktop/public_html
+BASIC_DIR=$HOME/Desktop/public_html/webPiano/
 
 function Clean () {
 	rm -rf $BASIC_DIR/Scripts/
