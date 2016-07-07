@@ -29,7 +29,7 @@ function DownloadFiles () {
 }
 
 
-function InstallNode () {
+function InstallNode () {q
 	cd $NODE_TMP
 	echo "Extracting package file..."
 	tar -zxf node-v6.2.2-darwin-x64.tar.gz
