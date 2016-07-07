@@ -24,25 +24,25 @@ function DownloadFiles () {
 	fi
 	cd $NODE_TMP
 	echo "Downloading latest Node.js ..."
-	curl -O "https://nodejs.org/dist/v6.2.2/node-v6.2.2-darwin-x64.tar.gz"
+	curl -O "https://nodejs.org/dist/v6.3.0/node-v6.3.0-darwin-x64.tar.gz"
 	cd ..
 }
 
 
-function InstallNode () {q
+function InstallNode () {
 	cd $NODE_TMP
 	echo "Extracting package file..."
-	tar -zxf node-v6.2.2-darwin-x64.tar.gz
-	mkdir -p $HOME/.node/
+	tar -zxf node-v6.3.0-darwin-x64.tar.gz
+	mkdir -p $HOME/.Toolchains/nodejs/
 	echo "Installing..."
-	mv node-v6.2.2-darwin-x64/ $HOME/.node/v6.2.2/
+	mv node-v6.3.0-darwin-x64/ $HOME/.Toolchains/nodejs/v6.3.0/
 	cd ..
 }
 
 
 function GenRC () {
 	echo "Adding path..."
-	echo 'export PATH=$HOME/.node/v6.2.2/bin:"${PATH}"' >> $HOME/.bash_profile
+	echo 'export PATH=$HOME/.Toolchains/nodejs/v6.3.0/bin:"${PATH}"' >> $HOME/.bash_profile
 }
 
 
@@ -85,7 +85,7 @@ function main () {
 		GenRC
 	else 
 		NODE_VER=$(node -v)
-		if echo $NODE_VER | grep -q "v6.2.2"; then
+		if echo $NODE_VER | grep -q "v6.3.0"; then
 			DownloadFiles
 			InstallNode
 			GenRC
