@@ -43,32 +43,48 @@ html
   body
     include ./Templates/navbar.jade
     
+    
+    
+    // Loading animation
+    .loading#loading
+      p LOADINFG...
+    
+    
+    // Classic Piano
     .container
-      h1 Europe Piano
-      .keybord
+      h1 Classic Piano
+      .keybord.ClassicPiano
         +setOfKeyC
         +setOfKeyF
         +setOfKeyC
         +setOfKeyF
         +setOfKeyC
-        
+    .list-blank
+
+
+    // Cute Piano
     .container
       h1 Cute Piano
-      .keybord
+      .keybord.CutePiano
         +setOfKeyC
         +setOfKeyF
         +setOfKeyC
         +setOfKeyF
         +setOfKeyC
+    .list-blank
+    
         
+    // Rock Piano
     .container
-      h1 Cute Piano
-      .keybord
+      h1 Rock Piano
+      .keybord.RockPiano
         +setOfKeyC
         +setOfKeyF
         +setOfKeyC
         +setOfKeyF
         +setOfKeyC
+    .list-blank
+    
         
   include ./Templates/script.jade
   

@@ -5,6 +5,12 @@
 let WarningMessgae: string = "Smartphone is not supported.\nPlease open on PC browser.";
 
 
+function loadingAnimation(): void {
+	document.getElementById("loading").classList.add("visible");
+}
+
+
+
 function checkBrowser(): void {
 	let userAgent: string = navigator.userAgent;
 
@@ -54,6 +60,7 @@ function replaceProtocol(): void {
 
 
 function main(): void {
+		loadingAnimation();
 		replaceProtocol();
 		checkBrowser();
 }

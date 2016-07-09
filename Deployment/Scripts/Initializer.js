@@ -2,6 +2,9 @@
 // Copyright (c) 2016 Shota Shimazu
 // This program is freely distributed under the MIT, see LICENSE for detail.
 var WarningMessgae = "Smartphone is not supported.\nPlease open on PC browser.";
+function loadingAnimation() {
+    document.getElementById("loading").classList.add("visible");
+}
 function checkBrowser() {
     var userAgent = navigator.userAgent;
     var getDeviceType = (function () {
@@ -46,6 +49,7 @@ function replaceProtocol() {
     }
 }
 function main() {
+    loadingAnimation();
     replaceProtocol();
     checkBrowser();
 }

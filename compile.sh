@@ -64,6 +64,25 @@ function CompileTS() {
 	fi
 }
 
+
+
+function deployLibSets() {
+	if [ -e Sources/Libraries/ ]; then
+		cp -r Sources/Libraries/ Deployment/Libraries/
+	else
+		echo "Libraries is not found."
+	fi
+}
+
+
+function deployContents() {
+	if [ -e Sources/Contents/ ]; then
+		cp -r Sources/Contents/ Deployment/Contents/
+	else
+		echo "Contents is not found."
+	fi
+}
+
 function main () {
 	Clean
 	Compile
@@ -85,6 +104,8 @@ function main () {
 		echo "ERROR: piano.css is not found in source directory."
 	fi
 	CompileTS
+	deployLibSets
+	deployContents
 }
 
 
