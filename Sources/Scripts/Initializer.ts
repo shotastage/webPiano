@@ -21,7 +21,7 @@ function checkBrowser(): void {
 	})();
 
 	if (getDeviceType == "sp") {
-		alert("Smartphone is not supported.Please open on PC browser.");
+		alert("Smartphone is not fully supported.\nPlease open on PC browser.");
 	}
 
 

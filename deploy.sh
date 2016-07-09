@@ -11,6 +11,7 @@ function Clean () {
 
 function Copy () {
 	cp Deployment/index.html $BASIC_DIR/index.html
+	cp Deployment/acknowledgment.html $BASIC_DIR/acknowledgment.html
 	cp Deployment/piano.css $BASIC_DIR/piano.css
 	cp -r Deployment/Scripts/ $BASIC_DIR/Scripts/
 }
