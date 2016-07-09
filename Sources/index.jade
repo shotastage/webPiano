@@ -10,6 +10,9 @@ mixin setOfKeyC(min_no, max_no)
       audio(id="sound-file" preload="auto")
         source(src="http://web.sfc.keio.ac.jp/~t16440ss/SoundFonts/C3.mp3" type="audio/mp3")
     button.blackKey.reveal
+      audio
+        source(src="http://web.sfc.keio.ac.jp/~t16440ss/SoundFonts/C3.mp3" type="audio/mp3")
+      
   .keySets
     button.whiteKey.reveal
     button.blackKey.reveal
@@ -39,10 +42,27 @@ html
   include ./Templates/head.jade
   body
     include ./Templates/navbar.jade
-    .container
-      h1 THIS PAGE IS NOW UNDER CONSTRUCTION.
     
     .container
+      h1 Europe Piano
+      .keybord
+        +setOfKeyC
+        +setOfKeyF
+        +setOfKeyC
+        +setOfKeyF
+        +setOfKeyC
+        
+    .container
+      h1 Cute Piano
+      .keybord
+        +setOfKeyC
+        +setOfKeyF
+        +setOfKeyC
+        +setOfKeyF
+        +setOfKeyC
+        
+    .container
+      h1 Cute Piano
       .keybord
         +setOfKeyC
         +setOfKeyF
