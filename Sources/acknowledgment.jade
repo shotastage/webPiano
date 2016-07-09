@@ -8,20 +8,68 @@ html
   include ./Templates/head.jade
   body
     include ./Templates/navbar.jade
+    
     .container
       h1 Acknowledgment
-      h2 Author
-      h3 Shota Shimazu
-      p I'm a student of Environment and Information studies at Keio Univ.
       
+    .container
+      .row
+        .col-md-12
+          .panel.panel-default
+            .panel-body
+              h2 Author
+              h3 Shota Shimazu
+              a(
+                href="https://shotastage.github.io"
+                class="btn btn-large btn-success"
+              ) Web Site
+              a(
+                href="https://twitter.com/shotastage/"
+                class="btn btn-large btn-info"
+              ) Twitter
+              a(
+                href="https://www.facebook.com/shota.shimazu.5"
+                class="btn btn-large btn-primary"
+              ) Facebook 
+              p I'm a student of Environment and Information studies at Keio Univ.
       
+  
+    
+    .container
       h1 Credits
-      h2 Bootstrap
-      p Copyright (c) 2003-2016 TWBS 
-      
-      h2 ScrollReveal.js
-      p Copyright (c) 2004-2016 ScrollReveal
+      .row
+        .col-md-6
+          .panel.panel-info
+            .panel-heading
+              h3.panel-title Bootswatch
+            .panel-body
+              a(href="http://bootswatch.com") Web Site
+              p Copyright 2012-2016 Thomas Park
+
+          
+        .col-md-6
+          .panel.panel-info
+            .panel-heading
+              h3.panel-title ScrollReveal.js
+            .panel-body
+              a(href="https://scrollrevealjs.org") Web Site
+              p Copyright 
+                a(href="https://twitter.com/jlmakes") @jlmakes
+              
+              
+    .container
+      .row
+        .col-md-12
+          h2 Source Code
+          p You can get source code of this program.
+          a(
+            href="https://github.com/shotastage/webPiano/archive/master.zip"
+            class="btn btn-large btn-primary"
+          ) Source Code
         
+        
+      
+  .list-blank  
   include ./Templates/script.jade
   
   
