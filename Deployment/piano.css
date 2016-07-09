@@ -108,7 +108,8 @@ li,
   height: 112px; }
 
 .navbar {
-  border-radius: 0; }
+  border-radius: 0;
+  width: 100%; }
 
 .navbar-brand {
   font-family: 'Comfortaa', cursive; }
