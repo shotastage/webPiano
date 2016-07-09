@@ -93,8 +93,8 @@ function main () {
 	else
 		NODE_VER=$(node -v)
 		if echo $NODE_VER | grep -q "v6.3.0"; then
-      echo "Latest Node.js is already installed."
-      echo "Skip installing Node.js"
+			echo "Latest Node.js is already installed."
+			echo "Skip installing Node.js"
 		else
 			if which node | grep -q "homebrew"; then
 				DownloadFiles
