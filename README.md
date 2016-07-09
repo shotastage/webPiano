@@ -26,8 +26,29 @@ You can play the piano on your browser that is made using Web-based technologies
 
 - Chrome 51+ ( OSX, Linux, Windows )
 
->> You may know this icon. 
->> ![Chrome Icon](https://upload.wikimedia.org/wikipedia/commons/c/ca/Google_Chrome_for_Android_Icon_2016.svg)
+
+## How to build.
+Before you build this project, please install build dependencies run following commands.
+
+```
+curl -O https://raw.githubusercontent.com/shotastage/webPiano/master/setup.sh && chmod 777 setup.sh && ./setup.sh
+```
+
+Next, you have to get source code of this project.
+
+```
+git clone https://github.com/shotastage/webPiano.git
+```
+
+After you got the source code, move `webPiano/` directory and run `compile.sh`.
+
+```
+cd webPiano/
+./compile.sh
+```
+
+If building process success, you probably find `Deployment` directory. This directory contains compiled source code.
+
 
 ### WARNING
 Firefox and IE is not supported. Please play on latest Chrome or Chromium.  
