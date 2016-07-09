@@ -3,7 +3,7 @@
 # This program is freely distributed under the MIT, see LICENSE for detail.
 
 # <!> WARNING <!>
-# THIS SCRIPT WILL CHANGE YOUR SYSTEM. DO NOT RUN THIS IF YOUR ARE NOT GOOD AT COMPUTER. 
+# THIS SCRIPT WILL CHANGE YOUR SYSTEM. DO NOT RUN THIS IF YOUR ARE NOT GOOD AT COMPUTER.
 # AND EVEN IF YOU KNOW ABOUT THIS SCRIPT, PLEASE RUN CAREFULLY.
 #
 # This script will sets up build environment for compiling sources of this program.
@@ -62,6 +62,13 @@ function InstallRequirements () {
 		echo "Installing jade..."
 		npm install -g jade
 	fi
+  if [ -e $HOME/.npm/typescript/ ]; then
+    echo "Installing typescript..."
+    npm install -g typescript
+  else
+    echo "Typescript is already installed."
+    echo "Skip installing typescript."
+  fi
 }
 
 
@@ -83,7 +90,7 @@ function main () {
 		DownloadFiles
 		InstallNode
 		GenRC
-	else 
+	else
 		NODE_VER=$(node -v)
 		if echo $NODE_VER | grep -q "v6.3.0"; then
 			DownloadFiles
@@ -111,4 +118,3 @@ function main () {
 
 
 main
-
