@@ -63,11 +63,11 @@ function InstallRequirements () {
 		npm install -g jade
 	fi
   if [ -e $HOME/.npm/typescript/ ]; then
-    echo "Installing typescript..."
-    npm install -g typescript
-  else
     echo "Typescript is already installed."
     echo "Skip installing typescript."
+  else
+    echo "Installing typescript..."
+    npm install -g typescript
   fi
 }
 
