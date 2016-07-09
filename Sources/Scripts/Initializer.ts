@@ -6,8 +6,8 @@ let WarningMessgae: string = "Smartphone is not supported.\nPlease open on PC br
 
 
 function checkBrowser(): void {
-	var userAgent: string = navigator.userAgent;
-	let WarningMessgae: string = "Smartphone is not supported.Please open on PC browser.";
+	let userAgent: string = navigator.userAgent;
+
 
 
 	var getDeviceType = (function(): string {
@@ -21,19 +21,19 @@ function checkBrowser(): void {
 	})();
 
 	if (getDeviceType == "sp") {
-		alert(WarningMessage);
+		alert("Smartphone is not supported.Please open on PC browser.");
 	}
 
 
 	// Check your browser.
-	if (Agent.search("Chrome") != -1) {
+	if (userAgent.search("Chrome") != -1) {
 		// Load required libraries
 	} else {
-		if (Agent.search("Safari") != -1) {
+		if (userAgent.search("Safari") != -1) {
 			console.log('Your browser "Safari" may be not fully supported.\nPlease open this page on latest Chrome.');
-		} else if (Agent.search("Firefox") != -1) {
+		} else if (userAgent.search("Firefox") != -1) {
 			console.log('Your browser "Firefox" may be not fully supported.\nPlease open this page on latest Chrome.');
-		} else if (Agent.search("Edge") != -1) {
+		} else if (userAgent.search("Edge") != -1) {
 			console.log('Your browser "Edge" may be not fully supported.\nPlease open this page on latest Chrome.');
 		} else {
 			alert("Your browser is not supported.\nPlase open this page on latest Chrome.");
