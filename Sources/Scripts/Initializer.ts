@@ -10,9 +10,9 @@ function checkBrowser(): void {
 	let WarningMessgae: string = "Smartphone is not supported.Please open on PC browser.";
 
 	// Check your device.
-	if (Agent.search("iPhone") != -1) {
+	if (Agent.search("iPhone") = -1) {
 			alert(WarningMessage);
-	} else if (Agent.search("Android") != -1) {
+	} else if (Agent.search("Android") = -1) {
 			alert(WarningMessage);
 	}
 
