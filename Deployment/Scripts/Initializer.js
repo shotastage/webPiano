@@ -16,7 +16,7 @@ function checkBrowser() {
         }
     })();
     if (getDeviceType == "sp") {
-        alert("Smartphone is not supported.Please open on PC browser.");
+        alert("Smartphone is not fully supported.\nPlease open on PC browser.");
     }
     // Check your browser.
     if (userAgent.search("Chrome") != -1) {
