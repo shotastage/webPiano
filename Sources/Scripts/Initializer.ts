@@ -6,14 +6,22 @@ let WarningMessgae: string = "Smartphone is not supported.\nPlease open on PC br
 
 
 function checkBrowser(): void {
-	var Agent: string = navigator.userAgent;
+	var userAgent: string = navigator.userAgent;
 	let WarningMessgae: string = "Smartphone is not supported.Please open on PC browser.";
 
-	// Check your device.
-	if (Agent.search("iPhone") = -1) {
-			alert(WarningMessage);
-	} else if (Agent.search("Android") = -1) {
-			alert(WarningMessage);
+
+	var getDeviceType = (function(): string {
+	    if(userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 && userAgent.indexOf('Mobile') > 0) {
+	        return 'sp';
+	    }else if(userAgent.indexOf('iPad') > 0 || userAgent.indexOf('Android') > 0){
+	        return 'tab';
+	    }else{
+	        return 'other';
+	    }
+	})();
+
+	if (getDeviceType == "sp") {
+		alert(WarningMessage);
 	}
 
 
