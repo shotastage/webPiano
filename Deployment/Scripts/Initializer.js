@@ -40,17 +40,14 @@ function checkBrowser() {
         }
     }
 }
-function replaceProtocol() {
+function main() {
     if (location.protocol == 'http:') {
         location.replace(location.href.replace(/http:/, 'https:'));
     }
     else {
         console.log("SSL Support: OK");
     }
-}
-function main() {
     loadingAnimation();
-    replaceProtocol();
     checkBrowser();
 }
 main();

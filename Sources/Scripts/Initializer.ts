@@ -49,19 +49,16 @@ function checkBrowser(): void {
 }
 
 
-function replaceProtocol(): void {
-	if(location.protocol == 'http:') {
-  	location.replace(location.href.replace(/http:/, 'https:'));
-	} else {
-		console.log("SSL Support: OK");
-	}
-}
 
 
 
 function main(): void {
+		if(location.protocol == 'http:') {
+			location.replace(location.href.replace(/http:/, 'https:'));
+		} else {
+			console.log("SSL Support: OK");
+		}
 		loadingAnimation();
-		replaceProtocol();
 		checkBrowser();
 }
 
