@@ -21,6 +21,7 @@ function Compile() {
 
 	if [ -e $HOME/.npm/jade/ ]; then
 		jade Sources/index.jade
+		jade Sources/acknowledgment.jade
 	else
 		echo "ERROR: jade is not found on your system."
 		echo "Please run setup.sh before you compile this project."
@@ -46,7 +47,7 @@ function CompileTS() {
 	## Check deploy directory
 	if [ -e Deployment/Scripts/ ]; then
 		echo ""
-	else 
+	else
 		mkdir -p Deployment/Scripts/
 	fi
 
@@ -71,6 +72,13 @@ function main () {
 	else
 		echo "ERROR: index.html is not found in source directory."
 	fi
+
+	if [ -e Sources/acknowledgment.html ]; then
+		mv -f Sources/acknowledgment.html Deployment/acknowledgment.html
+	else
+		echo "ERROR: index.html is not found in source directory."
+	fi
+
 	if [ -e Sources/piano.css ]; then
 		mv -f Sources/piano.css Deployment/piano.css
 	else
