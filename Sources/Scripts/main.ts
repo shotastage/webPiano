@@ -51,6 +51,9 @@ function splashSound(i: number): void {
 	let KeyElms = document.createElement("audio");
 	KeyElms.setAttribute("src", SfFile);
 	KeyElms.play();
+	setTimeout(function (): void {
+		KeyElms.pause();
+	}, 600);
 }
 
 
