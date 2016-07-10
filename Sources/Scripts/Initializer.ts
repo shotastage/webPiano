@@ -31,14 +31,14 @@ function checkBrowser(): void {
 
 	var getDeviceType: string = judgeUserAgent();
 
-	if (getDeviceType == "sp") {
-		alert("Smartphone is not fully supported.\nPlease open on PC browser.");
+	if (getDeviceType == "sp" || getDeviceType == "tab") {
+		alert("Smart device is not fully supported.\nPlease open on PC browser.");
 	}
 
 
 	// Check your browser.
 	if (userAgent.search("Chrome") != -1) {
-		// Load required libraries
+		console.log("Your browser is supported.");
 	} else {
 		if (userAgent.search("Safari") != -1) {
 			console.log('Your browser "Safari" may be not fully supported.\nPlease open this page on latest Chrome.');
@@ -46,9 +46,10 @@ function checkBrowser(): void {
 			console.log('Your browser "Firefox" may be not fully supported.\nPlease open this page on latest Chrome.');
 		} else if (userAgent.search("Edge") != -1) {
 			console.log('Your browser "Edge" may be not fully supported.\nPlease open this page on latest Chrome.');
+		} else if (userAgent.search("MSIE") != -1) {
+			alert("IE is not fully supported.\nPlease open this page on latesr Chrome.");
 		} else {
 			alert("Your browser is not supported.\nPlase open this page on latest Chrome.");
-			window.close();
 		}
 	}
 }
