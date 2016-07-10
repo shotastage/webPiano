@@ -12,13 +12,20 @@ var soundFonts = [
     "f3s.mp3", "g3.mp3", "g3s.mp3", "a4.mp3", "a4s.mp3", "b4.mp3", "c4.mp3", "c4s.mp3", "d4.mp3",
     "d4s.mp3", "e4.mp3"
 ];
-var keyElements = new Array(29);
+var classicKeyElements = new Array(29);
+var cuteKeyElements = new Array(29);
+var rockKeyElements = new Array(29);
 function getUrl(sfFile) {
     var baseUrl = "https://web.sfc.keio.ac.jp/webPiano/SoundFonts/";
     return baseUrl + sfFile;
 }
 for (var i = 1; i <= 29; i++) {
-    keyElements[i] = document.getElementById(keybordIDs[i]);
+    classicKeyElements[i] = document.getElementById("classicPiano" + keybordIDs[i]);
+    cuteKeyElements[i] = document.getElementById("cutePiano" + keybordIDs[i]);
+    rockKeyElements[i] = document.getElementById("rockPiano" + keybordIDs[i]);
+    console.log(classicKeyElements[i]);
+    console.log(cuteKeyElements[i]);
+    console.log(rockKeyElements[i]);
 }
 // Event Listener
 var eventListener = window.addEventListener('load', function (event) {
