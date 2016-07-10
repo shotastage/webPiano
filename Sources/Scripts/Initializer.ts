@@ -7,9 +7,7 @@
 
 function checkBrowser(): void {
 	let userAgent: string = navigator.userAgent;
-
-
-
+	
 
 	function judgeUserAgent(): string {
 		var DeviceType: string;
@@ -64,6 +62,7 @@ function main(): void {
 		} else {
 			console.log("SSL Support: OK");
 		}
+		window.resizeTo(1205, 306);
 		checkBrowser();
 }
 
