@@ -16,11 +16,11 @@ function checkBrowser(): void {
 	function judgeUserAgent(): string {
 		var DeviceType: string;
 
-	    if(	userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPod') > 0 ) {
+	    if(	userAgent.indexOf('iPhone') == 1 || userAgent.indexOf('iPod') == 1) {
 	        DeviceType = 'sp';
-	    } else if (userAgent.indexOf('Android') > 0 && userAgent.indexOf('Mobile') > 0) {
+	    } else if (userAgent.indexOf('Android') == 1 && userAgent.indexOf('Mobile') == 1) {
 			DeviceType = 'sp';
-		} else if (userAgent.indexOf('iPad') > 0 || userAgent.indexOf('Android') > 0){
+		} else if (userAgent.indexOf('iPad') == 1 || userAgent.indexOf('Android') == 1){
 	        DeviceType = 'tab';
 	    } else {
 	        DeviceType = 'other';
