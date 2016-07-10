@@ -16,36 +16,44 @@ var classicKeyElements = new Array(29);
 var cuteKeyElements = new Array(29);
 var rockKeyElements = new Array(29);
 function getUrl(sfFile) {
-    var baseUrl = "https://web.sfc.keio.ac.jp/webPiano/SoundFonts/";
+    var baseUrl = "https://web.sfc.keio.ac.jp/~t16440ss/webPiano/SoundFonts/";
     return baseUrl + sfFile;
 }
-for (var i = 0; i < 30; i++) {
-    console.log("Get ELM " + i);
-    classicKeyElements[i] = document.getElementById("classicPiano" + keybordIDs[i]);
-    cuteKeyElements[i] = document.getElementById("cutePiano" + keybordIDs[i]);
-    rockKeyElements[i] = document.getElementById("rockPiano" + keybordIDs[i]);
+for (var i = 0; i <= 28; i++) {
+    (function (i) {
+        classicKeyElements[i] = document.getElementById("classicPiano" + keybordIDs[i]);
+    })(i);
+    (function (i) {
+        cuteKeyElements[i] = document.getElementById("cutePiano" + keybordIDs[i]);
+    })(i);
+    (function (i) {
+        rockKeyElements[i] = document.getElementById("rockPiano" + keybordIDs[i]);
+    })(i);
 }
-// Debug
-for (var i = 0; i < 30; i++) {
-    console.log("Classic ELM " + i + classicKeyElements[i]);
-    console.log("Cute ELM " + i + cuteKeyElements[i]);
-    console.log("Rock ELM " + i + rockKeyElements[i]);
-}
-// Event Listener
-window.addEventListener('load', function (event) {
-    for (var i = 0; i < 30; i++) {
-        console.log(i);
-        classicKeyElements[i].addEventListener('click', function (event) {
-            alert("Clicked! " + i);
-        }, false);
-        console.log("CLASSIC" + i);
-        cuteKeyElements[i].addEventListener('click', function (event) {
-            alert("Clickesd! " + i);
-        }, false);
-        console.log("CUTE" + i);
-        rockKeyElements[i].addEventListener('click', function (event) {
-            alert("Clicked! " + i);
-        }, false);
-        console.log("ROCK" + i);
-    }
-}, false);
+//- Event Listener
+var eventListener = (function () {
+    window.addEventListener(MouseEvent.load, function () {
+        for (var i = 0; i <= 28; i++) {
+            (function (i) {
+                classicKeyElements[i].addEventListener(MouseEvent.click, function (event) {
+                    alert(i);
+                });
+            })(i);
+            (function (i) {
+                cuteKeyElements[i].addEventListener(MouseEvent.click, function () {
+                    alert(i);
+                });
+            })(i);
+            /*
+            for (var i: number = 0; i <= 28; i++) {
+                console.log(cuteKeyElements[i]);
+            }
+            */
+            (function (i) {
+                rockKeyElements[i].addEventListener(MouseEvent.click, function () {
+                    alert(i);
+                });
+            })(i);
+        }
+    }, false);
+})();
