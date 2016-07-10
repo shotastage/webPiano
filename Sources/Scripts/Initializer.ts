@@ -10,17 +10,18 @@ function checkBrowser(): void {
 
 
 
-	console.log(userAgent.indexOf('iPhone'));
-	console.log(userAgent);
+
+	var test: number = userAgent.indexOf("iPhone");
+	document.write("<p>" + test + "</p>");
 
 	function judgeUserAgent(): string {
 		var DeviceType: string;
 
-	    if(	userAgent.indexOf('iPhone') == 1 || userAgent.indexOf('iPod') == 1) {
+	    if(	userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPod') > 0 ) {
 	        DeviceType = 'sp';
-	    } else if (userAgent.indexOf('Android') == 1 && userAgent.indexOf('Mobile') == 1) {
+	    } else if (userAgent.indexOf('Android') > 0 && userAgent.indexOf('Mobile') > 0) {
 			DeviceType = 'sp';
-		} else if (userAgent.indexOf('iPad') == 1 || userAgent.indexOf('Android') == 1){
+		} else if (userAgent.indexOf('iPad') > 0 || userAgent.indexOf('Android') > 0){
 	        DeviceType = 'tab';
 	    } else {
 	        DeviceType = 'other';
