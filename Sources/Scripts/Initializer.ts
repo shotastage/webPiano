@@ -10,15 +10,28 @@ function checkBrowser(): void {
 
 
 
-	var getDeviceType = (function(): string {
-	    if(userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 && userAgent.indexOf('Mobile') > 0) {
-	        return 'sp';
-	    }else if(userAgent.indexOf('iPad') > 0 || userAgent.indexOf('Android') > 0){
-	        return 'tab';
-	    }else{
-	        return 'other';
+	console.log(userAgent.indexOf('iPhone'));
+	console.log(userAgent);
+
+	function judgeUserAgent(): string {
+		var DeviceType: string;
+
+	    if(	userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPod') > 0 ) {
+	        DeviceType = 'sp';
+	    } else if (userAgent.indexOf('Android') > 0 && userAgent.indexOf('Mobile') > 0) {
+			DeviceType = 'sp';
+		} else if (userAgent.indexOf('iPad') > 0 || userAgent.indexOf('Android') > 0){
+	        DeviceType = 'tab';
+	    } else {
+	        DeviceType = 'other';
 	    }
-	})();
+		return DeviceType;
+	}
+
+
+
+
+	var getDeviceType: string = judgeUserAgent();
 
 	if (getDeviceType == "sp") {
 		alert("Smartphone is not fully supported.\nPlease open on PC browser.");
