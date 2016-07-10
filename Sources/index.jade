@@ -4,24 +4,26 @@
 
 
 
-mixin setOfKeyC(min_no, max_no)
+mixin setOfKeyC
   .keySets
-    button.whiteKey.reveal(id = min_no)
+    button.whiteKey.reveal
       audio(id="sound-file" preload="auto")
-        source(src="http://web.sfc.keio.ac.jp/~t16440ss/SoundFonts/C3.mp3" type="audio/mp3")
+        source(type="audio/mp3")
     button.blackKey.reveal
       audio
-        source(src="http://web.sfc.keio.ac.jp/~t16440ss/SoundFonts/C3.mp3" type="audio/mp3")
+        source(type="audio/mp3")
       
   .keySets
     button.whiteKey.reveal
     button.blackKey.reveal
   .keySets
-    button.whiteKey.reveal(id = max_no)
+    button.whiteKey.reveal
   
-mixin setOfKeyF(min_no, max_no)
+
+
+mixin setOfKeyF
   .keySets
-    button.whiteKey.reveal(id = min_no)
+    button.whiteKey.reveal
     button.blackKey.reveal
   .keySets
     button.whiteKey.reveal
@@ -30,7 +32,52 @@ mixin setOfKeyF(min_no, max_no)
     button.whiteKey.reveal
     button.blackKey.reveal
   .keySets
-    button.whiteKey.reveal(id = max_no)
+    button.whiteKey.reveal
+
+
+
+
+
+
+mixin classicPianoSetsOfKeysC
+  .keySets
+    button.whiteKey.reveal#classicPianoC2
+      audio(id="sound-file" preload="auto")
+        source(type="audio/mp3")
+    button.blackKey.reveal#classicPianoC2s
+      audio
+        source(type="audio/mp3")
+      
+  .keySets
+    button.whiteKey.reveal#classicPianoD2
+      audio(id="sound-file" preload="auto")
+        source(type="audio/mp3")
+    button.blackKey.reveal#classicPianoD2s
+      audio(id="sound-file" preload="auto")
+        source(type="audio/mp3")
+  .keySets
+    button.whiteKey.reveal#classicPianoE2
+      audio(id="sound-file" preload="auto")
+        source(type="audio/mp3")
+  
+
+
+mixin classicPianoSetsOfKeysF
+  .keySets
+    button.whiteKey.reveal
+    button.blackKey.reveal
+  .keySets
+    button.whiteKey.reveal
+    button.blackKey.reveal
+  .keySets
+    button.whiteKey.reveal
+    button.blackKey.reveal
+  .keySets
+    button.whiteKey.reveal
+
+
+
+ 
 
 
 
@@ -54,11 +101,11 @@ html
     .container
       h1 Classic Piano
       .keybord.ClassicPiano
-        +setOfKeyC
-        +setOfKeyF
-        +setOfKeyC
-        +setOfKeyF
-        +setOfKeyC
+        +classicPianoSetsOfKeysC
+        +classicPianoSetsOfKeysF
+        +classicPianoSetsOfKeysC
+        +classicPianoSetsOfKeysF
+        +classicPianoSetsOfKeysC
     .list-blank
 
 

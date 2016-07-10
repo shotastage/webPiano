@@ -37,15 +37,13 @@ function getUrl(sfFile: string): string {
 
 
 
-for (var i=1 ; i<=29 ; i++) {
+for (var i=0 ; i<=29 ; i++) {
 	classicKeyElements[i] = document.getElementById("classicPiano" + keybordIDs[i]);
 	cuteKeyElements[i] = document.getElementById("cutePiano" + keybordIDs[i]);
 	rockKeyElements[i] = document.getElementById("rockPiano" + keybordIDs[i]);
 
+
 	console.log(classicKeyElements[i]);
-	console.log(cuteKeyElements[i]);
-	console.log(rockKeyElements[i]);
-	
 }
 
 

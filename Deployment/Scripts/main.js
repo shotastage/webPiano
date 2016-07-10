@@ -19,13 +19,11 @@ function getUrl(sfFile) {
     var baseUrl = "https://web.sfc.keio.ac.jp/webPiano/SoundFonts/";
     return baseUrl + sfFile;
 }
-for (var i = 1; i <= 29; i++) {
+for (var i = 0; i <= 29; i++) {
     classicKeyElements[i] = document.getElementById("classicPiano" + keybordIDs[i]);
     cuteKeyElements[i] = document.getElementById("cutePiano" + keybordIDs[i]);
     rockKeyElements[i] = document.getElementById("rockPiano" + keybordIDs[i]);
     console.log(classicKeyElements[i]);
-    console.log(cuteKeyElements[i]);
-    console.log(rockKeyElements[i]);
 }
 // Event Listener
 var eventListener = window.addEventListener('load', function (event) {
