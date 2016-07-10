@@ -2,12 +2,6 @@
 // Copyright (c) 2016 Shota Shimazu
 // This program is freely distributed under the MIT, see LICENSE for detail.
 
-let WarningMessgae: string = "Smartphone is not supported.\nPlease open on PC browser.";
-
-
-function loadingAnimation(): void {
-	document.getElementById("loading").classList.add("visible");
-}
 
 
 
@@ -58,7 +52,6 @@ function main(): void {
 		} else {
 			console.log("SSL Support: OK");
 		}
-		loadingAnimation();
 		checkBrowser();
 }
 
