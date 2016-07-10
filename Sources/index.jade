@@ -3,77 +3,287 @@
 // This program is freely distributed under the MIT, see LICENSE for detail.
 
 
+mixin setAudio
+  audio(id="sound-file" preload="auto")
+    source(type="audio/mp3")
 
-mixin setOfKeyC
-  .keySets
-    button.whiteKey.reveal
-      audio(id="sound-file" preload="auto")
-        source(type="audio/mp3")
-    button.blackKey.reveal
-      audio
-        source(type="audio/mp3")
-      
-  .keySets
-    button.whiteKey.reveal
-    button.blackKey.reveal
-  .keySets
-    button.whiteKey.reveal
+
+
+//- Classic Piano ---------------------------------------------------------------------------
+mixin classicPianoSetsOfKeysC(key_line)
+  if key_line === 2
+    .keySets
+      button.whiteKey.reveal#classicPianoC2
+        +setAudio
+      button.blackKey.reveal#classicPianoC2s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#classicPianoD2
+        +setAudio
+      button.blackKey.reveal#classicPianoD2s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#classicPianoE2
+        +setAudio
+  
+  if key_line === 3
+    .keySets
+      button.whiteKey.reveal#classicPianoC3
+        +setAudio
+      button.blackKey.reveal#classicPianoC3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#classicPianoD3
+        +setAudio
+      button.blackKey.reveal#classicPianoD3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#classicPianoE3
+        +setAudio
+  
+  if key_line === 4
+    .keySets
+      button.whiteKey.reveal#classicPianoC4
+        +setAudio
+      button.blackKey.reveal#classicPianoC4s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#classicPianoD4
+        +setAudio
+      button.blackKey.reveal#classicPianoD4s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#classicPianoE4
+        +setAudio
   
 
 
-mixin setOfKeyF
-  .keySets
-    button.whiteKey.reveal
-    button.blackKey.reveal
-  .keySets
-    button.whiteKey.reveal
-    button.blackKey.reveal
-  .keySets
-    button.whiteKey.reveal
-    button.blackKey.reveal
-  .keySets
-    button.whiteKey.reveal
+mixin classicPianoSetsOfKeysF(key_line)
+  if key_line == 2
+    .keySets
+      button.whiteKey.reveal#classicPianoF2
+        +setAudio
+      button.blackKey.reveal#classicPianoF2s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#classicPianoG2
+        +setAudio
+      button.blackKey.reveal#classicPianoG2s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#classicPianoA3
+        +setAudio
+      button.blackKey.reveal#classicPianoA3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#classicPianoB3
+        +setAudio
+  
+  if key_line == 3
+    .keySets
+      button.whiteKey.reveal#classicPianoF3
+        +setAudio
+      button.blackKey.reveal#classicPianoF3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#classicPianoG3
+        +setAudio
+      button.blackKey.reveal#classicPianoG3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#classicPianoA4
+        +setAudio
+      button.blackKey.reveal#classicPianoA4s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#classicPianoB4
+        +setAudio
 
 
 
 
 
 
-mixin classicPianoSetsOfKeysC
-  .keySets
-    button.whiteKey.reveal#classicPianoC2
-      audio(id="sound-file" preload="auto")
-        source(type="audio/mp3")
-    button.blackKey.reveal#classicPianoC2s
-      audio
-        source(type="audio/mp3")
-      
-  .keySets
-    button.whiteKey.reveal#classicPianoD2
-      audio(id="sound-file" preload="auto")
-        source(type="audio/mp3")
-    button.blackKey.reveal#classicPianoD2s
-      audio(id="sound-file" preload="auto")
-        source(type="audio/mp3")
-  .keySets
-    button.whiteKey.reveal#classicPianoE2
-      audio(id="sound-file" preload="auto")
-        source(type="audio/mp3")
+//- Cute Piano ----------------------------------------------------------
+mixin cutePianoSetsOfKeysC(key_line)
+  if key_line === 2
+    .keySets
+      button.whiteKey.reveal#cutePianoC2
+        +setAudio
+      button.blackKey.reveal#cutePianoC2s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#cutePianoD2
+        +setAudio
+      button.blackKey.reveal#cutePianoD2s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#cutePianoE2
+        +setAudio
+  
+  if key_line === 3
+    .keySets
+      button.whiteKey.reveal#cutePianoC3
+        +setAudio
+      button.blackKey.reveal#cutePianoC3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#cutePianoD3
+        +setAudio
+      button.blackKey.reveal#cutePianoD3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#cutePianoE3
+        +setAudio
+  
+  if key_line === 4
+    .keySets
+      button.whiteKey.reveal#cutePianoC4
+        +setAudio
+      button.blackKey.reveal#cutePianoC4s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#cutePianoD4
+        +setAudio
+      button.blackKey.reveal#cutePianoD4s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#cutePianoE4
+        +setAudio
   
 
+mixin cutePianoSetsOfKeysF(key_line)
+  if key_line == 2
+    .keySets
+      button.whiteKey.reveal#cutePianoF2
+        +setAudio
+      button.blackKey.reveal#cutePianoF2s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#cutePianoG2
+        +setAudio
+      button.blackKey.reveal#cutePianoG2s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#cutePianoA3
+        +setAudio
+      button.blackKey.reveal#cutePianoA3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#cutePianoB3
+        +setAudio
+  
+  if key_line == 3
+    .keySets
+      button.whiteKey.reveal#cutePianoF3
+        +setAudio
+      button.blackKey.reveal#cutePianoF3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#cutePianoG3
+        +setAudio
+      button.blackKey.reveal#cutePianoG3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#cutePianoA4
+        +setAudio
+      button.blackKey.reveal#cutePianoA4s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#cutesPianoB4
+        +setAudio
 
-mixin classicPianoSetsOfKeysF
-  .keySets
-    button.whiteKey.reveal
-    button.blackKey.reveal
-  .keySets
-    button.whiteKey.reveal
-    button.blackKey.reveal
-  .keySets
-    button.whiteKey.reveal
-    button.blackKey.reveal
-  .keySets
-    button.whiteKey.reveal
+
+
+//- Rock Piano ----------------------------------------------------------
+mixin rockPianoSetsOfKeysC(key_line)
+  if key_line === 2
+    .keySets
+      button.whiteKey.reveal#rockPianoC2
+        +setAudio
+      button.blackKey.reveal#rockPianoC2s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#rockPianoD2
+        +setAudio
+      button.blackKey.reveal#rockPianoD2s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#rockPianoE2
+        +setAudio
+  
+  if key_line === 3
+    .keySets
+      button.whiteKey.reveal#rockPianoC3
+        +setAudio
+      button.blackKey.reveal#rockPianoC3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#rockPianoD3
+        +setAudio
+      button.blackKey.reveal#rockPianoD3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#rockPianoE3
+        +setAudio
+  
+  if key_line === 4
+    .keySets
+      button.whiteKey.reveal#rockPianoC4
+        +setAudio
+      button.blackKey.reveal#rockPianoC4s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#rockPianoD4
+        +setAudio
+      button.blackKey.reveal#rockPianoD4s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#rockPianoE4
+        +setAudio
+  
+
+mixin rockPianoSetsOfKeysF(key_line)
+  if key_line == 2
+    .keySets
+      button.whiteKey.reveal#rockPianoF2
+        +setAudio
+      button.blackKey.reveal#rockPianoF2s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#rockPianoG2
+        +setAudio
+      button.blackKey.reveal#rockPianoG2s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#rockPianoA3
+        +setAudio
+      button.blackKey.reveal#rockPianoA3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#rockPianoB3
+        +setAudio
+  
+  if key_line == 3
+    .keySets
+      button.whiteKey.reveal#rockPianoF3
+        +setAudio
+      button.blackKey.reveal#rockPianoF3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#rockPianoG3
+        +setAudio
+      button.blackKey.reveal#rockPianoG3s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#rockPianoA4
+        +setAudio
+      button.blackKey.reveal#rockPianoA4s
+        +setAudio
+    .keySets
+      button.whiteKey.reveal#rockPianoB4
+        +setAudio
+
 
 
 
@@ -92,44 +302,41 @@ html
     
     
     
-    // Loading animation
-    .loading#loading
-      p LOADINFG...
+
     
-    
-    // Classic Piano
+    //- Classic Piano
     .container
       h1 Classic Piano
       .keybord.ClassicPiano
-        +classicPianoSetsOfKeysC
-        +classicPianoSetsOfKeysF
-        +classicPianoSetsOfKeysC
-        +classicPianoSetsOfKeysF
-        +classicPianoSetsOfKeysC
+        +classicPianoSetsOfKeysC(2)
+        +classicPianoSetsOfKeysF(2)
+        +classicPianoSetsOfKeysC(3)
+        +classicPianoSetsOfKeysF(3)
+        +classicPianoSetsOfKeysC(4)
     .list-blank
 
 
-    // Cute Piano
+    //- Cute Piano
     .container
       h1 Cute Piano
       .keybord.CutePiano
-        +setOfKeyC
-        +setOfKeyF
-        +setOfKeyC
-        +setOfKeyF
-        +setOfKeyC
+        +cutePianoSetsOfKeysC(2)
+        +cutePianoSetsOfKeysF(2)
+        +cutePianoSetsOfKeysC(3)
+        +cutePianoSetsOfKeysF(3)
+        +cutePianoSetsOfKeysC(4)
     .list-blank
     
         
-    // Rock Piano
+    //- Rock Piano
     .container
       h1 Rock Piano
       .keybord.RockPiano
-        +setOfKeyC
-        +setOfKeyF
-        +setOfKeyC
-        +setOfKeyF
-        +setOfKeyC
+        +rockPianoSetsOfKeysC(2)
+        +rockPianoSetsOfKeysF(2)
+        +rockPianoSetsOfKeysC(3)
+        +rockPianoSetsOfKeysF(3)
+        +rockPianoSetsOfKeysC(4)
     .list-blank
     
         

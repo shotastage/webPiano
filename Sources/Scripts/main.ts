@@ -5,7 +5,7 @@
 
 
 let keybordIDs: string[] = [
-	 "C2", "C2s", "D2", "D2s", "E2", "F2", "F2s", "G2", "G2s", "A3", "A3s", "B3", "C3", "C3s",
+	 "C2", "C2s", "D2", "D2s", "E2", "F2", "F2s", "G2", "G2s", "A3", "A3s", "B3", "C3", "C3s", 
 	 "D3", "D3s", "E3", "F3", "F3s", "G3", "G3s", "A4",  "A4s", "B4", "C4", "C4s", "D4", "D4s", "E4"
 ];
 
@@ -37,19 +37,49 @@ function getUrl(sfFile: string): string {
 
 
 
-for (var i=0 ; i<=29 ; i++) {
-	classicKeyElements[i] = document.getElementById("classicPiano" + keybordIDs[i]);
+for (var i = 0 ; i < 30 ; i++) {
+	console.log("Get ELM " + i);
+	
+
+	classicKeyElements[i] = document.getElementById("classicPiano" + keybordIDs[i]);	
 	cuteKeyElements[i] = document.getElementById("cutePiano" + keybordIDs[i]);
 	rockKeyElements[i] = document.getElementById("rockPiano" + keybordIDs[i]);
 
-
-	console.log(classicKeyElements[i]);
 }
 
 
 
+// Debug
+for (var i = 0; i < 30; i++) {
+	console.log("Classic ELM " + i + classicKeyElements[i]);
+	console.log("Cute ELM " + i + cuteKeyElements[i]);
+	console.log("Rock ELM " + i + rockKeyElements[i]);
+}
+
+
 // Event Listener
-let eventListener = window.addEventListener('load', function (event: MouseEvent): void {
-	// var document.getElementByID();
+window.addEventListener('load', function (event: MouseEvent): void {
+
+	for (var i: number = 0; i < 30; i++) {
+		console.log(i);
+		classicKeyElements[i].addEventListener('click', function (event: MouseEvent): void {
+			alert("Clicked! " + i);
+		}, false);
+		console.log("CLASSIC" + i);
+		
+
+		cuteKeyElements[i].addEventListener('click', function (event: MouseEvent): void {
+			alert("Clickesd! " + i);
+		}, false);
+		console.log("CUTE" + i);
+		
+
+		rockKeyElements[i].addEventListener('click', function (event: MouseEvent): void {
+			alert("Clicked! " + i);
+		}, false);
+		console.log("ROCK" + i);
+		
+	}
+
 
 }, false);

@@ -3,8 +3,6 @@
 // This program is freely distributed under the MIT, see LICENSE for detail.
 function checkBrowser() {
     var userAgent = navigator.userAgent;
-    console.log(userAgent.indexOf('iPhone'));
-    console.log(userAgent);
     function judgeUserAgent() {
         var DeviceType;
         if (userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPod') > 0) {

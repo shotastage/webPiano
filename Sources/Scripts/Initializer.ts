@@ -11,9 +11,6 @@ function checkBrowser(): void {
 
 
 
-	var test: number = userAgent.indexOf("iPhone");
-	document.write("<p>" + test + "</p>");
-
 	function judgeUserAgent(): string {
 		var DeviceType: string;
 
