@@ -16,10 +16,6 @@ let soundFonts: Array<string> = [
 	"d4s.mp3", "e4.mp3"
 ];
 
-
-
-
-
 let classicKeyElements: Array<HTMLElement> = new Array(29);
 let cuteKeyElements: Array<HTMLElement> = new Array(29);
 let rockKeyElements: Array<HTMLElement> = new Array(29);
@@ -35,59 +31,53 @@ function getUrl(sfFile: string): string {
 
 
 
-for (var i: number = 0 ; i <= 28 ; i++) {
-	(function (i: number): void {
-		classicKeyElements[i] = document.getElementById("classicPiano" + keybordIDs[i]);
-	})(i);	
-	(function (i: number): void {
-		cuteKeyElements[i] = document.getElementById("cutePiano" + keybordIDs[i]);
+
+
+for (var i: number = 0 ; i <= 28; i++) {
+	(function (i: number): any {
+		classicKeyElements[i] = document.getElementById("classic" + keybordIDs[i]);
+		return i;
 	})(i);
-	(function (i: number): void {
-		rockKeyElements[i] = document.getElementById("rockPiano" + keybordIDs[i]);
+
+	(function (i: number): any {
+		cuteKeyElements[i] = document.getElementById("cute" + keybordIDs[i]);
+		return i;
 	})(i);
-	
+
+	(function (i: number): any {
+		rockKeyElements[i] = document.getElementById("rock" + keybordIDs[i]);
+		return i;
+	})(i);
 }
 
 
 
-function classicPianoSplash(event: HTMLElementEvent<HTMLInputElement>): void {
-	alert(i);
-}
 
+window.addEventListener('load', function (): void {
+		
+	for (var i: number = 0; i <= 28; i++) {
 
-//- Event Listener
+		(function (i): EventListenerObject {
+			classicKeyElements[i].addEventListener('click', function () {
+				alert(i);
+			}, false);
+			return i;
+		})(i);
+		
 
-let eventListener = (function (): void {
-	window.addEventListener(MouseEvent.load, function (): void {
+		(function (i): EventListenerObject {
+			cuteKeyElements[i].addEventListener('click', function () {
+				alert(i);
+			}, false);
+			return i;
+		})(i);
 
-
-	
-
-		for (var i: number = 0; i <= 28; i++) {
-
-			(function (i: number): void {
-				classicKeyElements[i].addEventListener(MouseEvent.click, classicPianoSplash);
-			)(i);
-
-
-
-			(function (i: number): void {
-				cuteKeyElements[i].addEventListener(MouseEvent.click, function (): void {
-					alert(i);
-				});
-			})(i);
-			
-			/*
-			for (var i: number = 0; i <= 28; i++) {
-				console.log(cuteKeyElements[i]);	
-			}
-			*/
-
-			(function (i: number): void {
-				rockKeyElements[i].addEventListener(MouseEvent.click, function (): void {
-					alert(i);
-				});
-			})(i);
-		}
-	}, false);
-})();
+		
+		(function (i): EventListenerObject {
+			rockKeyElements[i].addEventListener('click', function () {
+				alert(i);
+			}, false);
+			return i;
+		})(i);
+	}
+}, false);

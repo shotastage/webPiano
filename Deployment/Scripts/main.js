@@ -21,39 +21,37 @@ function getUrl(sfFile) {
 }
 for (var i = 0; i <= 28; i++) {
     (function (i) {
-        classicKeyElements[i] = document.getElementById("classicPiano" + keybordIDs[i]);
+        classicKeyElements[i] = document.getElementById("classic" + keybordIDs[i]);
+        return i;
     })(i);
     (function (i) {
-        cuteKeyElements[i] = document.getElementById("cutePiano" + keybordIDs[i]);
+        cuteKeyElements[i] = document.getElementById("cute" + keybordIDs[i]);
+        return i;
     })(i);
     (function (i) {
-        rockKeyElements[i] = document.getElementById("rockPiano" + keybordIDs[i]);
+        rockKeyElements[i] = document.getElementById("rock" + keybordIDs[i]);
+        return i;
     })(i);
 }
-//- Event Listener
-var eventListener = (function () {
-    window.addEventListener(MouseEvent.load, function () {
-        for (var i = 0; i <= 28; i++) {
-            (function (i) {
-                classicKeyElements[i].addEventListener(MouseEvent.click, function (event) {
-                    alert(i);
-                });
-            })(i);
-            (function (i) {
-                cuteKeyElements[i].addEventListener(MouseEvent.click, function () {
-                    alert(i);
-                });
-            })(i);
-            /*
-            for (var i: number = 0; i <= 28; i++) {
-                console.log(cuteKeyElements[i]);
-            }
-            */
-            (function (i) {
-                rockKeyElements[i].addEventListener(MouseEvent.click, function () {
-                    alert(i);
-                });
-            })(i);
-        }
-    }, false);
-})();
+window.addEventListener('load', function () {
+    for (var i = 0; i <= 28; i++) {
+        (function (i) {
+            classicKeyElements[i].addEventListener('click', function () {
+                alert(i);
+            }, false);
+            return i;
+        })(i);
+        (function (i) {
+            cuteKeyElements[i].addEventListener('click', function () {
+                alert(i);
+            }, false);
+            return i;
+        })(i);
+        (function (i) {
+            rockKeyElements[i].addEventListener('click', function () {
+                alert(i);
+            }, false);
+            return i;
+        })(i);
+    }
+}, false);
