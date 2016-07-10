@@ -39,7 +39,7 @@ function checkBrowser(): void {
 		console.log("Your browser is supported.");
 	} else {
 		if (userAgent.search("Safari") != -1) {
-			alert('Your browser "Safari" is supported.\nPlease open this page on latest Chrome or Firefox.');
+			alert('Your browser "Safari" is NOT supported.\nPlease open this page on latest Chrome or Firefox.');
 		} else if (userAgent.search("Firefox") != -1) {
 			console.log('Your browser "Firefox" may be not fully supported.\nPlease open this page on latest Chrome.');
 		} else if (userAgent.search("Edge") != -1) {
