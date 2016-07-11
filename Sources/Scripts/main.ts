@@ -1,4 +1,5 @@
 /*
+	webPiano - Piano on your browser.
 	Copyright (c) 2016 Shota Shimazu
 	This program is freely distributed under the MIT, see LICENSE for detail.
 */
@@ -8,8 +9,6 @@ let keybordIDs: Array<string> = [
 	 "C2", "C2s", "D2", "D2s", "E2", "F2", "F2s", "G2", "G2s", "A3", "A3s", "B3", "C3", "C3s", 
 	 "D3", "D3s", "E3", "F3", "F3s", "G3", "G3s", "A4",  "A4s", "B4", "C4", "C4s", "D4", "D4s", "E4"
 ];
-
-
 
 let classicSoundIDs: Array<string> = [
  	"048.mp3", "049.mp3", "050.mp3", "051.mp3", "052.mp3", "053.mp3", "054.mp3", "055.mp3", "056.mp3",
@@ -40,13 +39,25 @@ let rockKeyElements: Array<HTMLElement> = new Array(29);
 
 
 
+
+function touchStatus(): boolean {
+	var touchStatus: boolean;
+
+	if (('ontouchstart' in window)) {
+		touchStatus = true;
+	} else {
+		touchStatus = false;
+	}
+	return touchStatus;
+}
+
 function getUrl(sfFile: string): string {
 	let baseUrl = "http://misohena.jp/art/js_piano/sounds/piano/44khz_mp3/";
 	return baseUrl + sfFile;
 }
 
-
 function splashSound(i: number): void {
+	
 	let SfFile = getUrl(classicSoundIDs[i]);
 	let KeyElms = document.createElement("audio");
 	KeyElms.setAttribute("src", SfFile);
@@ -54,6 +65,7 @@ function splashSound(i: number): void {
 	setTimeout(function (): void {
 		KeyElms.pause();
 	}, 600);
+
 }
 
 
@@ -81,33 +93,38 @@ for (var i: number = 0 ; i <= 28; i++) {
 
 
 
-
-
 window.addEventListener('load', function (): void {
+	let touchSupport: boolean = touchStatus();
+	if (touchSupport) {
+		alert("Touch support program is not supported.");
+	} else {
+		alert("PC");
+		for (var i: number = 0; i <= 28; i++) {
+
+			(function (i): EventListenerObject {
+				classicKeyElements[i].addEventListener('click', function () {
+					splashSound(i);
+				}, false);
+				return i;
+			})(i);
 		
-	for (var i: number = 0; i <= 28; i++) {
 
-		(function (i): EventListenerObject {
-			classicKeyElements[i].addEventListener('click', function () {
-				splashSound(i);
-			}, false);
-			return i;
-		})(i);
-		
-
-		(function (i): EventListenerObject {
-			cuteKeyElements[i].addEventListener('click', function () {
-				splashSound(i);
-			}, false);
-			return i;
-		})(i);
+			(function (i): EventListenerObject {
+				cuteKeyElements[i].addEventListener('click', function () {
+					splashSound(i);
+				}, false);
+				return i;
+			})(i);
 
 
-		(function (i): EventListenerObject {
-			rockKeyElements[i].addEventListener('click', function () {
-				splashSound(i);
-			}, false);
-			return i;
-		})(i);
+			(function (i): EventListenerObject {
+				rockKeyElements[i].addEventListener('click', function () {
+					splashSound(i);
+				}, false);
+				return i;
+			})(i);
+		}
 	}
 }, false);
+
+

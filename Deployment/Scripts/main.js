@@ -1,4 +1,5 @@
 /*
+    webPiano - Piano on your browser.
     Copyright (c) 2016 Shota Shimazu
     This program is freely distributed under the MIT, see LICENSE for detail.
 */
@@ -27,6 +28,16 @@ var rockSoundIDs = [
 var classicKeyElements = new Array(29);
 var cuteKeyElements = new Array(29);
 var rockKeyElements = new Array(29);
+function touchStatus() {
+    var touchStatus;
+    if (('ontouchstart' in window)) {
+        touchStatus = true;
+    }
+    else {
+        touchStatus = false;
+    }
+    return touchStatus;
+}
 function getUrl(sfFile) {
     var baseUrl = "http://misohena.jp/art/js_piano/sounds/piano/44khz_mp3/";
     return baseUrl + sfFile;
@@ -55,24 +66,31 @@ for (var i = 0; i <= 28; i++) {
     })(i);
 }
 window.addEventListener('load', function () {
-    for (var i = 0; i <= 28; i++) {
-        (function (i) {
-            classicKeyElements[i].addEventListener('click', function () {
-                splashSound(i);
-            }, false);
-            return i;
-        })(i);
-        (function (i) {
-            cuteKeyElements[i].addEventListener('click', function () {
-                splashSound(i);
-            }, false);
-            return i;
-        })(i);
-        (function (i) {
-            rockKeyElements[i].addEventListener('click', function () {
-                splashSound(i);
-            }, false);
-            return i;
-        })(i);
+    var touchSupport = touchStatus();
+    if (touchSupport) {
+        alert("Touch support program is not supported.");
+    }
+    else {
+        alert("PC");
+        for (var i = 0; i <= 28; i++) {
+            (function (i) {
+                classicKeyElements[i].addEventListener('click', function () {
+                    splashSound(i);
+                }, false);
+                return i;
+            })(i);
+            (function (i) {
+                cuteKeyElements[i].addEventListener('click', function () {
+                    splashSound(i);
+                }, false);
+                return i;
+            })(i);
+            (function (i) {
+                rockKeyElements[i].addEventListener('click', function () {
+                    splashSound(i);
+                }, false);
+                return i;
+            })(i);
+        }
     }
 }, false);

@@ -57,13 +57,13 @@ function checkBrowser(): void {
 
 
 function main(): void {
-		if(location.protocol == 'http:') {
+		if (location.protocol == 'http:') {
 			location.replace(location.href.replace(/http:/, 'https:'));
-		} else {
-			console.log("SSL Support: OK");
 		}
-		window.resizeTo(1205, 306);
-		checkBrowser();
+
+		if (location.href !== 'acknowledgment') {
+			checkBrowser();
+		}
 }
 
 

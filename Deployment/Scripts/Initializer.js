@@ -29,7 +29,7 @@ function checkBrowser() {
     }
     else {
         if (userAgent.search("Safari") != -1) {
-            console.log('Your browser "Safari" may be not fully supported.\nPlease open this page on latest Chrome.');
+            alert('Your browser "Safari" is NOT supported.\nPlease open this page on latest Chrome or Firefox.');
         }
         else if (userAgent.search("Firefox") != -1) {
             console.log('Your browser "Firefox" may be not fully supported.\nPlease open this page on latest Chrome.');
@@ -49,10 +49,8 @@ function main() {
     if (location.protocol == 'http:') {
         location.replace(location.href.replace(/http:/, 'https:'));
     }
-    else {
-        console.log("SSL Support: OK");
+    if (location.href !== 'acknowledgment') {
+        checkBrowser();
     }
-    window.resizeTo(1205, 306);
-    checkBrowser();
 }
 main();
