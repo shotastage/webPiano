@@ -5,6 +5,8 @@
 */
 
 
+
+// Definisions
 let keybordIDs: Array<string> = [
 	 "C2", "C2s", "D2", "D2s", "E2", "F2", "F2s", "G2", "G2s", "A3", "A3s", "B3", "C3", "C3s", 
 	 "D3", "D3s", "E3", "F3", "F3s", "G3", "G3s", "A4",  "A4s", "B4", "C4", "C4s", "D4", "D4s", "E4"
@@ -38,8 +40,23 @@ let rockKeyElements: Array<HTMLElement> = new Array(29);
 
 
 
+// Debug
+// ----------------------------------------------------------------------------------------------
+let debugMode: boolean = true;
+
+function debugLog(str: string): boolean {
+	if (debugMode) {
+		console.log(str);
+	}
+	return true;
+}
 
 
+
+
+
+// Functions
+// ----------------------------------------------------------------------------------------------
 function touchStatus(): boolean {
 	var touchStatus: boolean;
 
@@ -70,6 +87,73 @@ function splashSound(i: number): void {
 
 
 
+function addSplashEventTouch(): void {
+	for (var i: number = 0; i <= 28; i++) {
+			(function (i): EventListenerObject {
+				classicKeyElements[i].addEventListener('click', function () {
+					splashSound(i);
+					debugLog("Splash sound " + 1);
+				}, false);
+				return i;
+			})(i);
+		
+
+			(function (i): EventListenerObject {
+				cuteKeyElements[i].addEventListener('click', function () {
+					splashSound(i);
+					debugLog("Splash sound " + 1);
+				}, false);
+				return i;
+			})(i);
+
+
+			(function (i): EventListenerObject {
+				rockKeyElements[i].addEventListener('click', function () {
+					splashSound(i);
+					debugLog("Splash sound " + 1);
+				}, false);
+				return i;
+			})(i);
+		}
+}
+
+
+
+function addSplashEventClick(): void {
+	for (var i: number = 0; i <= 28; i++) {
+
+			(function (i): EventListenerObject {
+				classicKeyElements[i].addEventListener('click', function () {
+					splashSound(i);
+					debugLog("Splash sound " + i);
+				}, false);
+				return i;
+			})(i);
+		
+
+			(function (i): EventListenerObject {
+				cuteKeyElements[i].addEventListener('click', function () {
+					splashSound(i);
+					debugLog("Splash sound " + i);
+				}, false);
+				return i;
+			})(i);
+
+
+			(function (i): EventListenerObject {
+				rockKeyElements[i].addEventListener('click', function () {
+					splashSound(i);
+					debugLog("Splash sound " + i);
+				}, false);
+				return i;
+			})(i);
+		}
+}
+
+
+
+
+
 
 for (var i: number = 0 ; i <= 28; i++) {
 	(function (i: number): any {
@@ -90,40 +174,14 @@ for (var i: number = 0 ; i <= 28; i++) {
 
 
 
-
-
-
 window.addEventListener('load', function (): void {
 	let touchSupport: boolean = touchStatus();
 	if (touchSupport) {
-		alert("Touch support program is not supported.");
+		debugLog("This device support touch event.");
+		addSplashEventTouch();
 	} else {
-		alert("PC");
-		for (var i: number = 0; i <= 28; i++) {
-
-			(function (i): EventListenerObject {
-				classicKeyElements[i].addEventListener('click', function () {
-					splashSound(i);
-				}, false);
-				return i;
-			})(i);
-		
-
-			(function (i): EventListenerObject {
-				cuteKeyElements[i].addEventListener('click', function () {
-					splashSound(i);
-				}, false);
-				return i;
-			})(i);
-
-
-			(function (i): EventListenerObject {
-				rockKeyElements[i].addEventListener('click', function () {
-					splashSound(i);
-				}, false);
-				return i;
-			})(i);
-		}
+		debugLog("This device did not support touch event.");
+		addSplashEventClick();
 	}
 }, false);
 

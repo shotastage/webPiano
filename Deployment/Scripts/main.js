@@ -3,6 +3,7 @@
     Copyright (c) 2016 Shota Shimazu
     This program is freely distributed under the MIT, see LICENSE for detail.
 */
+// Definisions
 var keybordIDs = [
     "C2", "C2s", "D2", "D2s", "E2", "F2", "F2s", "G2", "G2s", "A3", "A3s", "B3", "C3", "C3s",
     "D3", "D3s", "E3", "F3", "F3s", "G3", "G3s", "A4", "A4s", "B4", "C4", "C4s", "D4", "D4s", "E4"
@@ -28,6 +29,17 @@ var rockSoundIDs = [
 var classicKeyElements = new Array(29);
 var cuteKeyElements = new Array(29);
 var rockKeyElements = new Array(29);
+// Debug
+// ----------------------------------------------------------------------------------------------
+var debugMode = true;
+function debugLog(str) {
+    if (debugMode) {
+        console.log(str);
+    }
+    return true;
+}
+// Functions
+// ----------------------------------------------------------------------------------------------
 function touchStatus() {
     var touchStatus;
     if (('ontouchstart' in window)) {
@@ -51,6 +63,56 @@ function splashSound(i) {
         KeyElms.pause();
     }, 600);
 }
+function addSplashEventTouch() {
+    for (var i = 0; i <= 28; i++) {
+        (function (i) {
+            classicKeyElements[i].addEventListener('click', function () {
+                splashSound(i);
+                debugLog("Splash sound " + 1);
+            }, false);
+            return i;
+        })(i);
+        (function (i) {
+            cuteKeyElements[i].addEventListener('click', function () {
+                splashSound(i);
+                debugLog("Splash sound " + 1);
+            }, false);
+            return i;
+        })(i);
+        (function (i) {
+            rockKeyElements[i].addEventListener('click', function () {
+                splashSound(i);
+                debugLog("Splash sound " + 1);
+            }, false);
+            return i;
+        })(i);
+    }
+}
+function addSplashEventClick() {
+    for (var i = 0; i <= 28; i++) {
+        (function (i) {
+            classicKeyElements[i].addEventListener('click', function () {
+                splashSound(i);
+                debugLog("Splash sound " + i);
+            }, false);
+            return i;
+        })(i);
+        (function (i) {
+            cuteKeyElements[i].addEventListener('click', function () {
+                splashSound(i);
+                debugLog("Splash sound " + i);
+            }, false);
+            return i;
+        })(i);
+        (function (i) {
+            rockKeyElements[i].addEventListener('click', function () {
+                splashSound(i);
+                debugLog("Splash sound " + i);
+            }, false);
+            return i;
+        })(i);
+    }
+}
 for (var i = 0; i <= 28; i++) {
     (function (i) {
         classicKeyElements[i] = document.getElementById("classic" + keybordIDs[i]);
@@ -68,29 +130,11 @@ for (var i = 0; i <= 28; i++) {
 window.addEventListener('load', function () {
     var touchSupport = touchStatus();
     if (touchSupport) {
-        alert("Touch support program is not supported.");
+        debugLog("This device support touch event.");
+        addSplashEventTouch();
     }
     else {
-        alert("PC");
-        for (var i = 0; i <= 28; i++) {
-            (function (i) {
-                classicKeyElements[i].addEventListener('click', function () {
-                    splashSound(i);
-                }, false);
-                return i;
-            })(i);
-            (function (i) {
-                cuteKeyElements[i].addEventListener('click', function () {
-                    splashSound(i);
-                }, false);
-                return i;
-            })(i);
-            (function (i) {
-                rockKeyElements[i].addEventListener('click', function () {
-                    splashSound(i);
-                }, false);
-                return i;
-            })(i);
-        }
+        debugLog("This device did not support touch event.");
+        addSplashEventClick();
     }
 }, false);
