@@ -4,10 +4,12 @@
     This program is freely distributed under the MIT, see LICENSE for detail.
 */
 // Definisions
+// ----------------------------------------------------------------------------------------------
 var keybordIDs = [
     "C2", "C2s", "D2", "D2s", "E2", "F2", "F2s", "G2", "G2s", "A3", "A3s", "B3", "C3", "C3s",
     "D3", "D3s", "E3", "F3", "F3s", "G3", "G3s", "A4", "A4s", "B4", "C4", "C4s", "D4", "D4s", "E4"
 ];
+// Sound files
 var classicSoundIDs = [
     "048.mp3", "049.mp3", "050.mp3", "051.mp3", "052.mp3", "053.mp3", "054.mp3", "055.mp3", "056.mp3",
     "057.mp3", "058.mp3", "059.mp3", "060.mp3", "061.mp3", "062.mp3", "063.mp3", "064.mp3 ", "065.mp3",
@@ -26,6 +28,7 @@ var rockSoundIDs = [
     "f3s.mp3", "g3.mp3", "g3s.mp3", "a4.mp3", "a4s.mp3", "b4.mp3", "c4.mp3", "c4s.mp3", "d4.mp3",
     "d4s.mp3", "e4.mp3"
 ];
+// Keybord elements
 var classicKeyElements = new Array(29);
 var cuteKeyElements = new Array(29);
 var rockKeyElements = new Array(29);
@@ -36,7 +39,6 @@ function debugLog(str) {
     if (debugMode) {
         console.log(str);
     }
-    return true;
 }
 // Functions
 // ----------------------------------------------------------------------------------------------
