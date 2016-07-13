@@ -49,7 +49,13 @@ function main() {
     if (location.protocol == 'http:') {
         location.replace(location.href.replace(/http:/, 'https:'));
     }
-    if (location.href !== 'acknowledgment') {
+    var roadStatus = "true";
+    window.sessionStorage.setItem('roadStatus', roadStatus);
+    if (sessionStorage.getItem('roadStatus') == "true") {
+        console.log("Status: roaded");
+    }
+    else {
+        console.log("Status: Init");
         checkBrowser();
     }
 }
