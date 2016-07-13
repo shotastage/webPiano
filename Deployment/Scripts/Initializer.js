@@ -50,7 +50,7 @@ function main() {
         location.replace(location.href.replace(/http:/, 'https:'));
     }
     var roadStatus = "true";
-    window.sessionStorage.setItem('roadStatus', roadStatus);
+    sessionStorage.setItem('roadStatus', roadStatus);
     if (sessionStorage.getItem('roadStatus') == "true") {
         console.log("Status: roaded");
     }

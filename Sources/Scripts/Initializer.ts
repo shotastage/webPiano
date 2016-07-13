@@ -62,7 +62,7 @@ function main(): void {
 		}
 
 		var roadStatus: string = "true";
-		window.sessionStorage.setItem('roadStatus', roadStatus);
+		sessionStorage.setItem('roadStatus', roadStatus);
 
 		if (sessionStorage.getItem('roadStatus') == "true") {
 			console.log("Status: roaded");
