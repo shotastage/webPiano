@@ -60,7 +60,7 @@ function main(): void {
 		if (location.protocol == 'http:') {
 			location.replace(location.href.replace(/http:/, 'https:'));
 		}
-
+		checkBrowser();
 		var roadStatus: string = "true";
 		sessionStorage.setItem('roadStatus', roadStatus);
 
@@ -70,7 +70,6 @@ function main(): void {
 			console.log("Status: Init");
 			checkBrowser();
 		}
-		checkBrowser();
 }
 
 

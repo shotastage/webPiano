@@ -49,6 +49,7 @@ function main() {
     if (location.protocol == 'http:') {
         location.replace(location.href.replace(/http:/, 'https:'));
     }
+    checkBrowser();
     var roadStatus = "true";
     sessionStorage.setItem('roadStatus', roadStatus);
     if (sessionStorage.getItem('roadStatus') == "true") {
@@ -58,6 +59,5 @@ function main() {
         console.log("Status: Init");
         checkBrowser();
     }
-    checkBrowser();
 }
 main();
