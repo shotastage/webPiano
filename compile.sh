@@ -20,8 +20,8 @@ function Compile() {
 	fi
 
 	if [ -e $HOME/.npm/jade/ ]; then
-		jade -P Sources/index.jade
-		jade -P Sources/acknowledgment.jade
+		jade Sources/index.jade
+		jade Sources/acknowledgment.jade
 	else
 		echo "ERROR: jade is not found on your system."
 		echo "Please run setup.sh before you compile this project."
