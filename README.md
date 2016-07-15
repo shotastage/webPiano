@@ -6,7 +6,7 @@ Visit [here](https://web.sfc.keio.ac.jp/~t16440ss/webPiano/) to show this page.
 
 
 ## Introduction
-You can play the piano on your browser that is made using Web-based technologies.  
+You can play the piano on your browser using Web-based technologies.  
 
 
 ### Features
