@@ -58,5 +58,6 @@ function main() {
         console.log("Status: Init");
         checkBrowser();
     }
+    checkBrowser();
 }
 main();

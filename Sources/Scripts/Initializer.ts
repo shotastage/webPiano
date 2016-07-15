@@ -70,6 +70,7 @@ function main(): void {
 			console.log("Status: Init");
 			checkBrowser();
 		}
+		checkBrowser();
 }
 
 
