@@ -24,7 +24,7 @@ function DownloadFiles () {
 	fi
 	cd $NODE_TMP
 	echo "Downloading latest Node.js ..."
-	curl -O "https://nodejs.org/dist/v6.3.0/node-v6.3.0-darwin-x64.tar.gz"
+	curl -O "https://nodejs.org/dist/v6.3.1/node-v6.3.1-darwin-x64.tar.gz"
 	cd ..
 }
 
@@ -32,17 +32,17 @@ function DownloadFiles () {
 function InstallNode () {
 	cd $NODE_TMP
 	echo "Extracting package file..."
-	tar -zxf node-v6.3.0-darwin-x64.tar.gz
+	tar -zxf node-v6.3.1-darwin-x64.tar.gz
 	mkdir -p $HOME/.Toolchains/nodejs/
 	echo "Installing..."
-	mv node-v6.3.0-darwin-x64/ $HOME/.Toolchains/nodejs/v6.3.0/
+	mv node-v6.3.1-darwin-x64/ $HOME/.Toolchains/nodejs/v6.3.1/
 	cd ..
 }
 
 
 function GenRC () {
 	echo "Adding path..."
-	echo 'export PATH=$HOME/.Toolchains/nodejs/v6.3.0/bin:"${PATH}"' >> $HOME/.bash_profile
+	echo 'export PATH=$HOME/.Toolchains/nodejs/v6.3.1/bin:"${PATH}"' >> $HOME/.bash_profile
 }
 
 
