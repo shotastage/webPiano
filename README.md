@@ -12,7 +12,6 @@ You can play the piano on your browser using Web-based technologies.
 ### Features
 - Play piano on your browser.
 - Lightweight and clear sound.
-- Support smart device.
 
 
 ### Required libraries
@@ -25,7 +24,12 @@ You can play the piano on your browser using Web-based technologies.
 ### Required browser 
 
 - Chrome 51+ ( OSX, Linux, Windows )
+- Firefox
+- Microsoft Edge
+- Opera ( Chromium-based version )
+- Latest IE
 
+Safari for Mac is not supported.
 
 ## How to build.
 Before you build this project, please install build dependencies run following commands.
