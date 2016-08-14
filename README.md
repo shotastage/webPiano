@@ -55,8 +55,8 @@ If building process success, you probably find `Deployment` directory. This dire
 
 
 ### WARNING
-Firefox and IE is not supported. Please play on latest Chrome or Chromium.  
-You can download it for free from [here](https://www.google.co.jp/chrome/browser/desktop/).
+Safari on Mac is not supported. Please play on latest Chrome or Firefox and latest Edge. 
+You can download Chrome for free from [here](https://www.google.co.jp/chrome/browser/desktop/).
 I think installing Chrome is not a bad way.
 
 
