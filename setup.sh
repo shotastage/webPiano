@@ -9,14 +9,15 @@
 # This script will sets up build environment for compiling sources of this program.
 
 NODE_TMP=".NODE_INSTALL_TMP/"
+NODE_VERSION="v6.3.1"
 
 
-function command_exists {
+command_exists {
   command -v "$1" > /dev/null;
 }
 
 
-function DownloadFiles () {
+DownloadFiles () {
 	if [ -e $NODE_TMP ]; then
 		rm -rf $NODE_TMP
 	else
@@ -24,96 +25,88 @@ function DownloadFiles () {
 	fi
 	cd $NODE_TMP
 	echo "Downloading latest Node.js ..."
-	curl -O "https://nodejs.org/dist/v6.3.1/node-v6.3.1-darwin-x64.tar.gz"
+	curl -O "https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}-darwin-x64.tar.gz"
 	cd ..
 }
 
 
-function InstallNode () {
+InstallNode () {
 	cd $NODE_TMP
 	echo "Extracting package file..."
-	tar -zxf node-v6.3.1-darwin-x64.tar.gz
+	tar -zxf node-${NODE_VERSION}-darwin-x64.tar.gz
 	mkdir -p $HOME/.Toolchains/nodejs/
 	echo "Installing..."
-	mv node-v6.3.1-darwin-x64/ $HOME/.Toolchains/nodejs/v6.3.1/
+	mv node-${NODE_VERSION}-darwin-x64/ $HOME/.Toolchains/nodejs/${NODE_VERSION}/
 	cd ..
 }
 
 
-function GenRC () {
+GenRC () {
 	echo "Adding path..."
 	echo 'export PATH=$HOME/.Toolchains/nodejs/v6.3.1/bin:"${PATH}"' >> $HOME/.bash_profile
 }
 
 
 
-function InstallRequirements () {
-	if [ -e $HOME/.npm/node-sass/ ]; then
-		echo "node-sass is already installed."
-		echo "Skip installing node-sass."
-	else
-		echo "Installing node-sass..."
-		npm install -g node-sass
-	fi
-	if [ -e $HOME/.npm/jade/ ]; then
-		echo "jade is already installed."
-		echo "Skip installing jade."
-	else
-		echo "Installing jade..."
-		npm install -g jade
-	fi
-  if [ -e $HOME/.npm/typescript/ ]; then
-    echo "Typescript is already installed."
-    echo "Skip installing typescript."
-  else
-    echo "Installing typescript..."
-    npm install -g typescript
-  fi
+InstallRequirements () {
+	installNpmPkg () {
+		if [ -e $HOME/.npm/${1} ]; then
+			echo "${1} is already installed."
+			echo "Skip installing ${1}."
+		else
+			echo "Installing ${1}..."
+			npm install -g ${1}
+		fi
+	}
+
+	installNpmPkg node-sass
+	installNpmPkg jade
+	installNpmPkg typescript
 }
 
 
-function Clean () {
+Clean () {
 	if [ -e $NODE_TMP ]; then
 		rm -rf $NODE_TMP
 	fi
 }
 
-function main () {
-	echo "Requirements Installer  v0.0.1"
-	echo "Copyright (c) 2016 Shota Shimazu"
-	echo "This program is freely distributed under the MIT, see LICENSE for detail."
-	echo
-	echo "Press [return] key to continue."
-	read
 
-	if ! command_exists node; then
-		DownloadFiles
-		InstallNode
-		GenRC
+
+
+
+
+echo "Requirements Installer  v0.0.1"
+echo "Copyright (c) 2016 Shota Shimazu"
+echo "This program is freely distributed under the MIT, see LICENSE for detail."
+echo
+echo "Press [return] key to continue."
+read
+
+if ! command_exists node; then
+	DownloadFiles
+	InstallNode
+	GenRC
+else
+	NODE_VER=$(node -v)
+	if echo $NODE_VER | grep -q "v6.3.0"; then
+		echo "Latest Node.js is already installed."
+		echo "Skip installing Node.js"
 	else
-		NODE_VER=$(node -v)
-		if echo $NODE_VER | grep -q "v6.3.0"; then
-			echo "Latest Node.js is already installed."
-			echo "Skip installing Node.js"
+		if which node | grep -q "homebrew"; then
+			DownloadFiles
+			InstallNode
+			GenRC
 		else
-			if which node | grep -q "homebrew"; then
-				DownloadFiles
-				InstallNode
-				GenRC
-			else
-				echo "Latest Node.js is already installed."
-				echo "Skip installing node."
-			fi
+			echo "Latest Node.js is already installed."
+			echo "Skip installing node."
 		fi
 	fi
-	source $HOME/.bash_profile
-	InstallRequirements
-	Clean
-	echo "Completed."
-	echo "Press [return] key to exit."
-	read
-	exit 0
-}
-
-
-main
+fi
+source $HOME/.bash_profile
+InstallRequirements
+Clean
+echo "Completed."
+echo "Press [return] key to exit."
+read
+exit 0
