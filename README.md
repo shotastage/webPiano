@@ -1,7 +1,8 @@
-Web Piano for submission of IT class
+Web Piano
 ------------------------------------
 
-This program is made for a submission of IT class at Keio University.  
+>>This program is made for a submission of IT class.  
+Web based instrumental UI for mixcha project.
 Visit [here](https://web.sfc.keio.ac.jp/~t16440ss/webPiano/) to show this page.  
 
 
@@ -11,7 +12,6 @@ You can play the piano on your browser using Web-based technologies.
 
 ### Features
 - Play piano on your browser.
-- Lightweight and clear sound.
 
 
 ### Required libraries
@@ -29,7 +29,7 @@ You can play the piano on your browser using Web-based technologies.
 - Opera ( Chromium-based version )
 - Latest IE
 
-Safari for Mac is not supported.
+Safari for Mac and mobile browser are not supported.
 
 ## How to build.
 Before you build this project, please install build dependencies run following commands.
