@@ -9,10 +9,10 @@
 # This script will sets up build environment for compiling sources of this program.
 
 NODE_TMP=".NODE_INSTALL_TMP/"
-NODE_VERSION="v6.3.1"
+NODE_VERSION="v6.6.0"
 
 
-command_exists {
+command_exists () {
   command -v "$1" > /dev/null;
 }
 
@@ -43,7 +43,7 @@ InstallNode () {
 
 GenRC () {
 	echo "Adding path..."
-	echo 'export PATH=$HOME/.Toolchains/nodejs/v6.3.1/bin:"${PATH}"' >> $HOME/.bash_profile
+	echo 'export PATH=$HOME/.Toolchains/nodejs/v6.6.0/bin:"${PATH}"' >> $HOME/.bash_profile
 }
 
 
@@ -60,7 +60,7 @@ InstallRequirements () {
 	}
 
 	installNpmPkg node-sass
-	installNpmPkg jade
+	installNpmPkg pug
 	installNpmPkg typescript
 }
 
@@ -76,7 +76,7 @@ Clean () {
 
 
 
-echo "Requirements Installer  v0.0.1"
+echo "Node.js Installer  for macOS v0.0.3"
 echo "Copyright (c) 2016 Shota Shimazu"
 echo "This program is freely distributed under the MIT, see LICENSE for detail."
 echo
@@ -89,7 +89,7 @@ if ! command_exists node; then
 	GenRC
 else
 	NODE_VER=$(node -v)
-	if echo $NODE_VER | grep -q "v6.3.0"; then
+	if echo $NODE_VER | grep -q "v6.6.0"; then
 		echo "Latest Node.js is already installed."
 		echo "Skip installing Node.js"
 	else
