@@ -9,7 +9,7 @@
 # This script will sets up build environment for compiling sources of this program.
 
 NODE_TMP=".NODE_INSTALL_TMP/"
-NODE_VERSION="v6.6.0"
+NODE_VERSION="v6.8.1"
 
 
 command_exists () {
@@ -43,7 +43,7 @@ InstallNode () {
 
 GenRC () {
 	echo "Adding path..."
-	echo 'export PATH=$HOME/.Toolchains/nodejs/v6.6.0/bin:"${PATH}"' >> $HOME/.bash_profile
+	echo 'export PATH=$HOME/.Toolchains/nodejs/v6.8.1/bin:"${PATH}"' >> $HOME/.bash_profile
 }
 
 
@@ -89,7 +89,7 @@ if ! command_exists node; then
 	GenRC
 else
 	NODE_VER=$(node -v)
-	if echo $NODE_VER | grep -q "v6.6.0"; then
+	if echo $NODE_VER | grep -q "v6.8.1"; then
 		echo "Latest Node.js is already installed."
 		echo "Skip installing Node.js"
 	else
