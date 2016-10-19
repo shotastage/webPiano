@@ -46,7 +46,7 @@ let rockKeyElements: Array<HTMLElement> = new Array(29);
 
 // Debug
 // ----------------------------------------------------------------------------------------------
-let debugMode: boolean = true;
+let debugMode: boolean = false;
 
 function debugLog(str: string): void{
 	if (debugMode) {
