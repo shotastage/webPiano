@@ -11,7 +11,7 @@ function Clean () {
 }
 
 function Compile() {
-	if [ -e $HOME/.npm/node-sass/ ]; then
+	if [ -e ./node_modules/.bin/node-sass/ ]; then
 		node-sass Sources/piano.scss Sources/piano.css
 	else
 		echo "ERROR: node-sass is not installed on your system."
@@ -19,9 +19,9 @@ function Compile() {
 		exit 1
 	fi
 
-	if [ -e $HOME/.npm/pug/ ]; then
-		pug Sources/index.jade
-		pug Sources/acknowledgment.jade
+	if [ -e ./node_modules/.bin/pug/ ]; then
+		pug Sources/index.pug
+		pug Sources/acknowledgment.pug
 	else
 		echo "ERROR: jade is not installed on your system."
 		echo "Please run setup.sh before you compile this project."
@@ -34,7 +34,7 @@ function Compile() {
 function CompileTS() {
 
 	## Compile TypeScript
-	if [ -e $HOME/.npm/typescript/ ]; then
+	if [ -e ./node_modules/.bin/tsc ]; then
 		tsc Sources/Scripts/main.ts
 		tsc Sources/Scripts/Initializer.ts
 	else
