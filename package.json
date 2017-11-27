@@ -1,0 +1,14 @@
+{
+  "name": "webPiano",
+  "version": "1.0.0",
+  "description": "Piano on the web",
+  "main": "index.js",
+  "repository": "https://github.com/shotastage/webPiano.git",
+  "author": "Shota Shimazu <hornet.live.mf@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "pug-cli": "^1.0.0-alpha6",
+    "typescript": "^2.6.1"
+  }
+}

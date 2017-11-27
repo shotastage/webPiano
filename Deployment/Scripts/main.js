@@ -34,7 +34,7 @@ var cuteKeyElements = new Array(29);
 var rockKeyElements = new Array(29);
 // Debug
 // ----------------------------------------------------------------------------------------------
-var debugMode = true;
+var debugMode = false;
 function debugLog(str) {
     if (debugMode) {
         console.log(str);
