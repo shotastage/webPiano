@@ -23,5 +23,4 @@ function main () {
 	Copy
 }
 
-
-main 
+main
