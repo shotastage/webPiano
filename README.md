@@ -1,7 +1,7 @@
 Web Piano
 ------------------------------------
 
->>This program is made for a submission of IT class.  
+>>This program is made for a assignment of IT class.  
 Web based instrumental UI for mixcha project.
 Visit [here](https://web.sfc.keio.ac.jp/~t16440ss/webPiano/) to show this page.  
 
