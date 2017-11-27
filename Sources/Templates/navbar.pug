@@ -1,23 +1,19 @@
-nav.navbar.navbar-default.reveal
-  .container-fluid
-    // Brand and toggle get grouped for better mobile display
-    .navbar-header
-      a.navbar-brand(href="index.html") Web Piano
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  a.navbar-brand(href="index.html") Web Piano
+  button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation")
+    span.navbar-toggler-icon
+
+  .collapse.navbar-collapse#navbarColor03
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link(href="index.html") Piano
+          span.sr-only (current)
+      li.nav-item
+        a.nav-link(href="acknowledgment.html") Acknowledgment
       
-
-    // Collect the nav links, forms, and other content for toggling
-    .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
-      ul.nav.navbar-nav
-        li.active
-          a(href="index.html") Piano
-            span.sr-only (current)
-        li
-          a(href="acknowledgment.html") Acknowledgment
-              
-
-      ul.nav.navbar-nav.navbar-right
-        li
-          a(href="https://shotastage.github.io") Author
-        li
-          a(href="https://github.com/shotastage/webPiano.git")
-            i.fa.fa-github.fa-lg(aria-hidden="true")
+    ul.nav.navbar-nav.navbar-right
+      li.nav-item
+        a.nav-link(href="https://shotastage.github.io") Author
+      li.nav-item
+        a.nav-link(href="https://github.com/shotastage/webPiano.git")
+          i.fa.fa-github.fa-lg(aria-hidden="true")
